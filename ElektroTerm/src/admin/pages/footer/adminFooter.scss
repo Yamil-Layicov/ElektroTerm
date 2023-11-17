@@ -1,0 +1,29 @@
+
+.adminFooter{
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+
+    p{
+      font-size: 19px;
+    }
+
+    .aboutEdit{
+              outline: none;
+              padding: 12px;
+              border-radius: 7px;
+              border: 2px solid #DAC0A3;
+              background-color: #DAC0A3;
+              color: white;
+              font-size: 16px;
+              transition: all .3s ease-in-out;
+      
+              &:hover{
+                border: 2px solid white;
+                color: #DAC0A3;
+                background-color: white;
+                cursor: pointer;
+                box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+              }
+    }
+}

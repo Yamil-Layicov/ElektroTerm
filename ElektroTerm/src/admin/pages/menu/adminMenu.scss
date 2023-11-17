@@ -1,0 +1,77 @@
+.adminAboout {
+  .aboutEdit {
+    margin-top: 20px;
+    outline: none;
+    padding: 12px;
+    border-radius: 7px;
+    border: 2px solid #dac0a3;
+    background-color: #dac0a3;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border: 2px solid white;
+      color: #dac0a3;
+      background-color: white;
+      cursor: pointer;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
+  }
+
+  width: 50%;
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+  }
+}
+
+.adminAboout {
+  .contentTable {
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+      thead {
+        background-color: #dac0a3;
+        tr {
+          color: #ffffff;
+          text-align: left;
+          font-weight: bold;
+        }
+      }
+
+      th,
+      td {
+        padding: 16px;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+
+      tbody tr:last-of-type {
+        border-bottom: 2px solid #dac0a3;
+      }
+
+      tbody tr.active-row {
+        font-weight: bold;
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.adminGallery {
+
+  .amburanForms{
+    position: relative;
+
+    button{
+      position: absolute;
+      top: 0;
+      left: 300px;
+        outline: none;
+        padding: 12px;
+        border-radius: 7px;
+        border: 2px solid #DAC0A3;
+        background-color: #DAC0A3;
+        color: white;
+        font-size: 16px;
+        transition: all .3s ease-in-out;
+
+        &:hover{
+          border: 2px solid white;
+          color: #DAC0A3;
+          background-color: white;
+          cursor: pointer;
+          box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        }
+      }
+
+      .chooseFile{
+        position: relative;
+
+        .custom-file-input {
+          opacity: 1;
+          padding: 10px 40px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+  
+        .custom-file-input-label {
+          pointer-events: none;
+          position: absolute;
+          display: inline-block;
+          padding: 12px 32px;
+          background-color: #007bff;
+          color: #fff;
+          border: 1px solid #007bff;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+      }
+
+     
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .imgContent{
+      display: flex;
+      flex-wrap: wrap;
+
+     .imgBox{
+      position: relative;
+      img{
+        width: 100px;
+        height: 100px;
+        margin: 15px;
+      }
+
+      .deleteImg{
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        font-weight: bold;
+        color: red;
+        cursor: pointer;
+      }
+     }
+
+      
+    }
+
+    .textContent{
+      width: 500px;
+      height: 400px;
+
+      .textBox{
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 2px;
+      }
+
+      button{
+        outline: none;
+        padding: 12px;
+        border-radius: 7px;
+        border: 2px solid #DAC0A3;
+        background-color: #DAC0A3;
+        color: white;
+        font-size: 16px;
+        transition: all .3s ease-in-out;
+
+        &:hover{
+          border: 2px solid white;
+          color: #DAC0A3;
+          background-color: white;
+          cursor: pointer;
+          box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        }
+      }
+    }
+  }
+
+}

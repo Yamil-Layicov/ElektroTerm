@@ -1,0 +1,13 @@
+.amburanEditModal{
+    textarea{
+        font-size: 16px;
+        outline: none;
+        margin-top: 20px;
+        border: 2px solid #2A3447;
+        height: 150px;
+
+        &:focus{
+            border: 2px solid green;
+        }
+    }
+}
