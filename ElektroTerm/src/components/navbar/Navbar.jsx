@@ -158,7 +158,6 @@ const Navbar = () => {
         </div>
         <div className="instaIcon">
           <span><InstagramIcon /></span>
-          <span><FacebookIcon /></span>
         </div>
         <div className="mainRight">
           <div className="right">
