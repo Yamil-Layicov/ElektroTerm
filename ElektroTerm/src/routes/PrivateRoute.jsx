@@ -3,7 +3,6 @@ import {useAuth} from '../context/AuthContext'
 
 const PrivateRoute = ({children}) => {
 
-
   const {user} = useAuth()
 
   if(!user){

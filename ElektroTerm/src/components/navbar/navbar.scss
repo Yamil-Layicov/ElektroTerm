@@ -42,20 +42,20 @@ nav {
     .centerLinks {
       .links {
         display: flex;
-        gap: 2.5rem;
+        gap: 3rem;
         font-size: 13px;
         text-transform: uppercase;
         font-weight: 600;
         border-left: 1px solid rgba(217, 217, 217, 0.397);
         border-right: 1px solid rgba(217, 217, 217, 0.397);
-        padding: 50px 120px;
+        padding: 50px 120px 50px 200px;
 
         .link {
           text-decoration: none !important;
-          color: white;
           list-style-type: none;
+          color: white;
         }
-
+        
         span {
           transition: all 0.3s ease-in-out;
           &:hover {

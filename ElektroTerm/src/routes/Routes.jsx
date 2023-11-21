@@ -1,9 +1,5 @@
 import HomeLayout from '../pages/homeLayout/HomeLayout'
 import Home from '../pages/home/Home'
-import MenuPage from '../pages/menu/MenuPage'
-import Gallery from '../pages/gallery/Gallery'
-import About from '../pages/about/About'
-import Reservation from '../pages/reservation/Reservation'
 import Login from '../pages/login/Login'
 import Error404 from '../pages/error404/Error404'
 import PrivateRoute from './PrivateRoute'
@@ -17,6 +13,10 @@ import AdminReservation from '../admin/pages/reservation/AdminReservation'
 import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
 
 
+import AboutPage from '../pages/about/AboutPage';
+import ContactPage from '../pages/contact/ContactPage';
+
+
 const routes = [
   {
     path: '/',
@@ -27,21 +27,21 @@ const routes = [
         element: <Home />,
       },
       {
-        path: 'menu',
-        element: <MenuPage />,
-      },
-      {
-        path: 'gallery',
-        element: <Gallery />,
+        path: 'əlaqə',
+        element: <ContactPage/>,
       },
       // {
-      //   path: 'about',
-      //   element: <About />,
+      //   path: 'gallery',
+      //   element: <Gallery />,
       // },
       {
-        path: 'reservation',
-        element: <Reservation />,
+        path: 'haqqımızda',
+        element: <AboutPage/>,
       },
+      // {
+      //   path: 'reservation',
+      //   element: <Reservation />,
+      // },
     ],
   },
   {

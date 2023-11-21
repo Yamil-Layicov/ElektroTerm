@@ -13,7 +13,8 @@ import navImg from "./navImg.png";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from '@mui/icons-material/Facebook';
 
-const Navbar = () => {
+
+const Navbar = ({color}) => {
   const [navbar, setNavbar] = useState(false);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
   const [navData, setNavData] = useState([]);
@@ -69,7 +70,7 @@ const Navbar = () => {
     setIsOpenNavbar(false);
   };
   const navigate5 = () => {
-    navigate("contact");
+    navigate("əlaqə");
     setIsOpenNavbar(false);
   };
   const navigate6 = () => {
@@ -93,13 +94,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`${navbar && "navActive"}`}>
+      <nav className={`${navbar && "navActive"}`} style={{backgroundColor:navbar ? " " : color}}>
         <div className="left">
           <div className="leftLogo">
             <div className="logo">
               <img
-                src="https://layerdrops.com/krowd/assets/images/logo-2.png"
+                src="https://t4.ftcdn.net/jpg/04/06/62/77/360_F_406627778_aL7egoVcnIuO1dsCGVDjgvdDGa9zJU1k.jpg"
                 alt=""
+                style={{borderRadius:"20%", width:"70px", height:"70px"}}
               />
             </div>
           </div>
@@ -121,26 +123,26 @@ const Navbar = () => {
               >
                 Haqqımızda
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
                 to="/services"
                 className="link"
               >
                 Xidmətlər
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
                 to="/blog"
                 className="link"
               >
-                Bloq
+                İCARƏ
               </NavLink>
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
-                to="/contact"
+                to="/əlaqə"
                 className="link"
               >
                 Əlaqə
