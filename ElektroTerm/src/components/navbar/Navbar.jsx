@@ -134,7 +134,7 @@ const Navbar = ({color}) => {
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
-                to="/blog"
+                to="/İcarə"
                 className="link"
               >
                 İCARƏ

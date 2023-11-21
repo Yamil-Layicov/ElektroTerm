@@ -1,5 +1,6 @@
 import Navbar from '../../components/navbar/Navbar';
 import './contactPage.scss';
+import {motion} from "framer-motion";
 
 const ContactPage = () => {
   return (
@@ -7,7 +8,11 @@ const ContactPage = () => {
       <Navbar color={"#1C1F2E"}/>
       <div className='contactPage'>
         <div className="imgBanner">
-          <h1>Əlaqə</h1>
+          <motion.h1
+           initial={{opacity:0, x:-150}}
+           animate={{opacity:1, x:0}}
+           transition={{duration:1}}
+          >Əlaqə</motion.h1>
         </div>
         
       </div>

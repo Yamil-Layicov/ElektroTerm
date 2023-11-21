@@ -1,10 +1,19 @@
 import { MdDone } from "react-icons/md";
 import "./about.scss";
+import { motion } from "framer-motion";
+
 
 const About = () => {
+
   return (
     <div className="aboutComponent">
-      <div className="left">
+      <motion.div
+         initial={{opacity:0, x:-150}}
+         whileInView ={{opacity:1, x:0}}
+         transition={{duration:1, delay:0.2}}
+         viewport={{once:true,amaount:1}}
+         className="left"
+      >
         <div className="bigImg">
           <div className="boxes">
             <div></div>
@@ -23,8 +32,13 @@ const About = () => {
             alt=""
           />
         </div>
-      </div>
-      <div className="right">
+      </motion.div>
+      <motion.div
+        initial={{opacity:0, x:150}}
+        whileInView ={{opacity:1, x:0}}
+        transition={{duration:1.3, delay:0.3}}
+        viewport={{once:true,amaount:1}}
+       className="right">
         <p className="h1">
           We Help at Every Step From Concept <br /> to Market
         </p>
@@ -70,7 +84,7 @@ const About = () => {
           </div> */}
         </div>
         <button>daha ətraflı</button>
-      </div>
+      </motion.div>
     </div>
   );
 };

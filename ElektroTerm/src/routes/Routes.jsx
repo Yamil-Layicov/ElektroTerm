@@ -15,6 +15,7 @@ import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
 
 import AboutPage from '../pages/about/AboutPage';
 import ContactPage from '../pages/contact/ContactPage';
+import IcarePage from '../pages/icare/IcarePage'
 
 
 const routes = [
@@ -30,10 +31,10 @@ const routes = [
         path: 'əlaqə',
         element: <ContactPage/>,
       },
-      // {
-      //   path: 'gallery',
-      //   element: <Gallery />,
-      // },
+      {
+        path: 'İcarə',
+        element: <IcarePage />,
+      },
       {
         path: 'haqqımızda',
         element: <AboutPage/>,

@@ -33,16 +33,8 @@ const Footer = () => {
 
   const navigate = useNavigate();
 
-  const navigate1 = () => {
-    navigate("/");
-    moveToTop();
-  };
   const navigate2 = () => {
-    navigate("services");
-    moveToTop();
-  };
-  const navigate3 = () => {
-    navigate("blog");
+    navigate("İcarə");
     moveToTop();
   };
   const navigate4 = () => {
@@ -50,11 +42,7 @@ const Footer = () => {
     moveToTop();
   };
   const navigate5 = () => {
-    navigate("contact");
-    moveToTop();
-  };
-  const navigate6 = () => {
-    navigate("faq");
+    navigate("əlaqə");
     moveToTop();
   };
 
@@ -73,9 +61,7 @@ const Footer = () => {
         <div className="secondBox">
           <h4 >Faydalı bağlantılar</h4>
           <p onClick={navigate4}>Haqqımızda</p>
-          <p onClick={navigate2}>Xidmətlər</p>
-          <p onClick={navigate3}>Bloq</p>
-          <p onClick={navigate6}>FAQ</p>
+          <p onClick={navigate2}>İcarə</p>
           <p onClick={navigate5}>Əlaqə</p> 
         </div>
         <div className="thirdBox">
