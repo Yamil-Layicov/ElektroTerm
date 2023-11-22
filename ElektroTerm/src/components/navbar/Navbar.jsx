@@ -58,23 +58,19 @@ const Navbar = ({color}) => {
     setIsOpenNavbar(false);
   };
   const navigate2 = () => {
-    navigate("services");
+    navigate("/haqqımızda");
     setIsOpenNavbar(false);
   };
   const navigate3 = () => {
-    navigate("blog");
+    navigate("/xəbərlər");
     setIsOpenNavbar(false);
   };
   const navigate4 = () => {
-    navigate("haqqımızda");
+    navigate("/İcarə");
     setIsOpenNavbar(false);
   };
   const navigate5 = () => {
-    navigate("əlaqə");
-    setIsOpenNavbar(false);
-  };
-  const navigate6 = () => {
-    navigate("faq");
+    navigate("/əlaqə");
     setIsOpenNavbar(false);
   };
 
@@ -123,14 +119,14 @@ const Navbar = ({color}) => {
               >
                 Haqqımızda
               </NavLink>
-              {/* <NavLink
+              <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
-                to="/services"
+                to="/xəbərlər"
                 className="link"
               >
-                Xidmətlər
-              </NavLink> */}
+                XƏBƏRLƏR 
+              </NavLink>
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
                 onClick={() => moveToTop()}
@@ -147,14 +143,6 @@ const Navbar = ({color}) => {
               >
                 Əlaqə
               </NavLink>
-              {/* <NavLink
-                style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
-                onClick={() => moveToTop()}
-                to="/faq"
-                className="link"
-              >
-                faq
-              </NavLink> */}
             </div>
           </div>
         </div>
@@ -182,8 +170,8 @@ const Navbar = ({color}) => {
           <div className="mobileLeft">
             <div className="logo" style={{ height: "40px" }}>
               <img
-                style={{ paddingRight: "50px" }}
-                src={navData?.image}
+                style={{ borderRadius:"20%", width:"50px", height:"50px" }}
+                src="https://t4.ftcdn.net/jpg/04/06/62/77/360_F_406627778_aL7egoVcnIuO1dsCGVDjgvdDGa9zJU1k.jpg"
                 alt=""
               />
               <div onClick={() => setIsOpenNavbar(false)} className="iconMenu">
@@ -195,19 +183,16 @@ const Navbar = ({color}) => {
                 Ana səhifə
               </span>
               <span style={{ cursor: "pointer" }} onClick={navigate2}>
-                Xidmətlər
+              Haqqımızda
               </span>
               <span style={{ cursor: "pointer" }} onClick={navigate3}>
-                Bloq
+              XƏBƏRLƏR
               </span>
               <span style={{ cursor: "pointer" }} onClick={navigate4}>
-                Haqqımızda
+              İCARƏ
               </span>
               <span style={{ cursor: "pointer" }} onClick={navigate5}>
                 Əlaqə
-              </span>
-              <span style={{ cursor: "pointer" }} onClick={navigate6}>
-                faq
               </span>
             </div>
             <div className="navContact">
@@ -222,6 +207,15 @@ const Navbar = ({color}) => {
                 <span>
                   Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22
                 </span>
+              </p>
+              <p>
+                <span>
+                  <StarOutlinedIcon
+                    style={{ fill: "#FFCC00" }}
+                    fontSize="small"
+                  />
+                </span>
+                <span>{navData?.home_phone}</span>
               </p>
               <p>
                 <span>

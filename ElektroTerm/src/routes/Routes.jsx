@@ -16,6 +16,7 @@ import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
 import AboutPage from '../pages/about/AboutPage';
 import ContactPage from '../pages/contact/ContactPage';
 import IcarePage from '../pages/icare/IcarePage'
+import NewsPage from '../pages/news/NewsPage'
 
 
 const routes = [
@@ -39,10 +40,10 @@ const routes = [
         path: 'haqqımızda',
         element: <AboutPage/>,
       },
-      // {
-      //   path: 'reservation',
-      //   element: <Reservation />,
-      // },
+      {
+        path: 'xəbərlər',
+        element: <NewsPage />,
+      },
     ],
   },
   {
