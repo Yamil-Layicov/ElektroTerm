@@ -56,10 +56,17 @@
         }
       }
       .subcriber {
+        position: relative;
+        .errorMesg{
+          position: absolute;
+          top: 30px;
+          left: 0;
+          color: red;
+          font-size: 12px;
+        }
         .inputMsg {
           position: relative;
           margin-top: 20px;
-  
           .sendBox{
               position: absolute;
               top: 0;

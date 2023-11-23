@@ -9,6 +9,8 @@ import {useNavigate} from 'react-router-dom';
 const Footer = () => {
 
   const [navData, setNavData] = useState([])
+  // const [inputData, setInputData] = useState('')
+  // const [show, setShow] = useState(false)
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -53,6 +55,7 @@ const Footer = () => {
     moveToTop();
   };
 
+
   return (
     <div className="footer">
       <div className="boxes">
@@ -81,9 +84,10 @@ const Footer = () => {
         </div>
         <div className="subcriber">
           <h4>Yeni xəbərlər üçün Abunə olun </h4>
+          {/* {show && <span className="errorMesg">E-poçt  qeyd olunmalıdır</span>} */}
           <div className="inputMsg">
-            <input type="text" placeholder="E-Poçt daxil edin " />
-            <div className="sendBox"><BiLogoTelegram/></div>
+            <input onChange={(e) => setInputData(e.target.value)} type="text" placeholder="E-Poçt daxil edin " />
+            <div  className="sendBox"><BiLogoTelegram/></div>
           </div>
         </div>
       </div>
