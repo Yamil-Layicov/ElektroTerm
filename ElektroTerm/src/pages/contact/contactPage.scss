@@ -162,5 +162,12 @@
 @media (max-width: "600px") {
   .contactPage {
     padding-top: 80px;
+    .imgBanner{
+      padding-left: 50px;
+
+      &::after{
+        left: 50px;
+      }
+    }
   }
 }

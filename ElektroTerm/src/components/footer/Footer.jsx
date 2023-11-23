@@ -32,13 +32,20 @@ const Footer = () => {
 
 
   const navigate = useNavigate();
-
+  const navigate1 = () => {
+    navigate("/");
+    moveToTop();
+  };
   const navigate2 = () => {
-    navigate("İcarə");
+    navigate("haqqımızda");
+    moveToTop();
+  };
+  const navigate3 = () => {
+    navigate("xəbərlər");
     moveToTop();
   };
   const navigate4 = () => {
-    navigate("haqqımızda");
+    navigate("İcarə");
     moveToTop();
   };
   const navigate5 = () => {
@@ -60,8 +67,10 @@ const Footer = () => {
         </div>
         <div className="secondBox">
           <h4 >Faydalı bağlantılar</h4>
-          <p onClick={navigate4}>Haqqımızda</p>
-          <p onClick={navigate2}>İcarə</p>
+          <p onClick={navigate1}>Ana səhifə</p> 
+          <p onClick={navigate2}>Haqqımızda</p>
+          <p onClick={navigate3}>Xəbərlər</p>
+          <p onClick={navigate4}>İcarə</p>
           <p onClick={navigate5}>Əlaqə</p> 
         </div>
         <div className="thirdBox">

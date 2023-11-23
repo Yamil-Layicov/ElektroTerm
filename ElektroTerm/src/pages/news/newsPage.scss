@@ -1,46 +1,132 @@
 .newsPage {
-    padding-top: 110px;
-  
-    .imgBanner {
-      background-image: url("./contactBack.jpg");
-      height: 360px;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      color: white;
-      padding-left: 100px;
-      position: relative;
-  
-      h1{
-          font-size: 48px;
-      }
-  
-      &::after{
-          content: "";
-          background-color: #29F0B4;
-          width: 40px;
-          height: 40px;
-          position: absolute;
-          bottom: 0;
-          left: 100px;
-      }
-  
+  padding-top: 110px;
+
+  .imgBanner {
+    background-image: url("./contactBack.jpg");
+    height: 360px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 100px;
+    position: relative;
+
+    h1 {
+      font-size: 48px;
+    }
+
+    &::after {
+      content: "";
+      background-color: #29f0b4;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 100px;
     }
   }
-  
-  
-  @media(max-width:"1050px"){
-      .newsPage{
-          padding-top: 90px;
+
+  .newsBoxes {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .boxes {
+      width: 1300px;
+      display: grid;
+      grid-template-columns: repeat(3, 3fr);
+      gap: 40px;
+      .box {
+        background-color: #f4f4f4;
+        .imgBox {
+          img {
+            width: 100%;
+          }
+        }
+        .textBox {
+          padding: 40px 40px 0px 40px;
+          .date {
+            background-color: #674df0;
+            width: 130px;
+            text-align: center;
+            padding: 8px 0;
+            color: white;
+            font-size: 13px;
+          }
+          .title{
+            font-size: 34px;
+            font-weight: 500;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-top: 20px;
+          }
+          button{
+            border: none;
+            background-color: white;
+            font-size: 25px;
+            color: gray;
+            padding: 18px 22px 14px 22px;
+            margin-top: 20px;
+            transition: all .3s ease-in-out;
+
+            &:hover{
+                background-color: #29f0b4;
+                cursor: pointer;
+                color: white;
+            }
+          }
+        }
       }
+    }
   }
-  
-  @media(max-width:"600px"){
-      .newsPage{
-          padding-top: 80px;
+}
+
+@media (max-width: "1300px") {
+  .newsPage {
+    .newsBoxes{
+      .boxes{
+        grid-template-columns: repeat(2, 2fr);
       }
+    }
   }
-  
+}
+
+@media (max-width: "1050px") {
+  .newsPage {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: "900px") {
+  .newsPage {
+    .newsBoxes{
+      padding: 100px 15px;
+      .boxes{
+        grid-template-columns: repeat(1, 1fr);
+        .box{
+          .textBox{
+            padding: 20px 20px 0px 20px;
+            .title{
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: "600px") {
+  .newsPage {
+    padding-top: 80px;
+    .imgBanner{
+      padding-left: 50px;
+
+      &::after{
+        left: 50px;
+      }
+    }
+  }
+}

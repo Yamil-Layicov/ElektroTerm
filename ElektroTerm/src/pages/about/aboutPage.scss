@@ -43,6 +43,13 @@
   @media(max-width:"600px"){
       .abouttPage{
           padding-top: 80px;
+          .imgBanner{
+            padding-left: 50px;
+      
+            &::after{
+              left: 50px;
+            }
+          }
       }
   }
   

@@ -1,0 +1,82 @@
+.newsPageDetail {
+  padding-top: 110px;
+  .imgBanner {
+    background-image: url("../contactBack.jpg");
+    height: 360px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 100px;
+    position: relative;
+
+    h1 {
+      font-size: 48px;
+    }
+
+    &::after {
+      content: "";
+      background-color: #29f0b4;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 100px;
+    }
+  }
+  .newsDetailBox{
+    padding: 100px;
+    width: 1200px;
+    .newsDetailBoxInto{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .img{
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .date {
+        background-color: #674df0;
+        width: 130px;
+        text-align: center;
+        padding: 8px 0;
+        color: white;
+        font-size: 13px;
+      }
+      .title{
+        font-size: 34px;
+        font-weight: 500;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-top: 20px;
+      }
+      .content{
+        font-size: 18px;
+        font-weight: 300;
+        color: #838694;
+      }
+    }
+  }
+}
+
+@media(max-width:1200px){
+  .newsPageDetail{
+    .newsDetailBox{
+      width: 100%;
+      padding: 100px 40px;
+    }
+  }
+}
+
+@media(max-width:800px){
+  .newsPageDetail{
+    .newsDetailBox{
+      width: 100%;
+      padding: 80px 15px;
+    }
+  }
+}

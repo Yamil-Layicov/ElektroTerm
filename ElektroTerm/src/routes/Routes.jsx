@@ -17,6 +17,8 @@ import AboutPage from '../pages/about/AboutPage';
 import ContactPage from '../pages/contact/ContactPage';
 import IcarePage from '../pages/icare/IcarePage'
 import NewsPage from '../pages/news/NewsPage'
+import NewsLayout from '../pages/news/newsLayout/NewsLayout'
+import NewsDetail from '../pages/news/newsDetail/NewsDetail'
 
 
 const routes = [
@@ -42,7 +44,17 @@ const routes = [
       },
       {
         path: 'xəbərlər',
-        element: <NewsPage />,
+        element: <NewsLayout />,
+        children:[
+          {
+            index:true,
+            element: <NewsPage/>
+          },
+          {
+            path:":id",
+            element: <NewsDetail/>
+          }
+        ]
       },
     ],
   },
