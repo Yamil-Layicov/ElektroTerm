@@ -80,3 +80,16 @@
     }
   }
 }
+
+@media (max-width: "600px") {
+  .newsPageDetail {
+    padding-top: 80px;
+    .imgBanner{
+      padding-left: 50px;
+
+      &::after{
+        left: 50px;
+      }
+    }
+  }
+}

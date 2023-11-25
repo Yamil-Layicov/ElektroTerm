@@ -1,168 +1,192 @@
 .icarePage {
-    padding-top: 110px;
-  
-    .imgBanner {
-      background-image: url("./contactBack.jpg");
-      height: 360px;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      color: white;
-      padding-left: 100px;
-      position: relative;
-  
-      h1{
-          font-size: 48px;
-      }
-  
-      &::after{
-          content: "";
-          background-color: #29F0B4;
-          width: 40px;
-          height: 40px;
-          position: absolute;
-          bottom: 0;
-          left: 100px;
-      }
-  
+  padding-top: 110px;
+
+  .imgBanner {
+    background-image: url("./contactBack.jpg");
+    height: 360px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 100px;
+    position: relative;
+
+    h1 {
+      font-size: 48px;
     }
-    .formBox {
+
+    &::after {
+      content: "";
+      background-color: #29f0b4;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+      left: 100px;
+    }
+  }
+  .formBox {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h1 {
+      color: #1b1f2e;
+      font-size: 55px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      padding: 5px 0 50px 0;
+    }
+
+    h4 {
+      color: #674df0;
+      font-weight: 300;
+      font-size: 20px;
       display: flex;
-      flex-direction: column;
-      padding: 100px 20px;
       justify-content: center;
       align-items: center;
-      width: 100%;
-  
-      h1{
-          color: #1B1F2E;
-          font-size: 55px;
-          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-          padding: 5px 0 50px 0;
+      gap: 10px;
+
+      span {
+        background-color: #29f0b4;
+        width: 7px;
+        height: 8px;
+        display: inline-block;
       }
-  
-      h4{
-          color: #674DF0;
-          font-weight: 300;
-          font-size: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-  
-          span{
-            background-color: #29f0b4;
-            width: 7px;
-            height: 8px;
-            display: inline-block;
+    }
+
+    form {
+      width: 800px;
+      text-align: center;
+      .inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap: 35px;
+        .input{
+          position: relative;
+          small{
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            color: red;
           }
-      }
-  
-      form {
-        width: 800px;
-        text-align: center;
-        .inputs {
-          display: grid;
-          grid-template-columns: repeat(2, 2fr);
-          gap: 25px;
+
           input {
+            width: 100%;
             outline: none;
             padding: 25px;
             background-color: #f7f7f9;
             border: none;
             color: gray;
             font-size: 18px;
-          }
-        }
-        textarea {
-          width: 100%;
-          outline: none;
-          padding: 25px;
-          background-color: #f7f7f9;
-          border: none;
-          color: gray;
-          font-size: 18px;
-          margin-top: 25px;
-        }
-        button {
-          border: none;
-          padding: 26px 62px;
-          color: black;
-          background-color: black;
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: 600;
-          font-size: 15px;
-          font-weight: 500;
-          margin-top: 30px;
-          cursor: pointer;
-          position: relative;
-          z-index: 1;
-          text-transform: uppercase;
+            border-radius: 3px;
+            border: 1px solid white;
   
-          &::after {
-            content: "";
-            position: absolute;
-            background-color: #29f0b4;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            transition: all 0.4s ease-in-out;
-          }
-  
-          &:hover {
-            color: white;
-            &::after {
-              width: 0%;
-              height: 0%;
+            &:focus {
+              border: 1px solid #29f0b4;
             }
           }
+          .inputError{
+            border: 1px solid red;
+          }
         }
-        
       }
-    }
-    
-  }
-  
-  
-  
-  
-  @media(max-width:"1050px"){
-      .icarePage{
-          padding-top: 90px;
-      }
-  }
+      textarea {
+        width: 100%;
+        outline: none;
+        padding: 25px;
+        background-color: #f7f7f9;
+        border: none;
+        color: gray;
+        font-size: 18px;
+        margin-top: 25px;
+        border: 2px solid white;
+        border-radius: 3px;
 
-  @media (max-width: "850px") {
-    .icarePage {
-      .formBox{
-        h1{
-          font-size: 35px;
+
+        &:focus {
+          border: 2px solid #29f0b4;
         }
-        form{
+      }
+      button {
+        border: none;
+        padding: 26px 62px;
+        color: black;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 30px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        text-transform: uppercase;
+        &:disabled{
+          opacity: 0.3;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: #29f0b4;
+          bottom: 0;
+          left: 0;
           width: 100%;
-          .inputs{
-            grid-template-columns: repeat(1, 1fr);
+          height: 100%;
+          z-index: -1;
+          transition: all 0.4s ease-in-out;
+        }
+
+        &:hover {
+          color: white;
+          &::after {
+            width: 0%;
+            height: 0%;
           }
         }
       }
     }
   }
-  
-  @media(max-width:"600px"){
-      .icarePage{
-          padding-top: 80px;
-          .imgBanner{
-            padding-left: 50px;
-      
-            &::after{
-              left: 50px;
-            }
-          }
-      }
+}
+
+@media (max-width: "1050px") {
+  .icarePage {
+    padding-top: 90px;
   }
-  
+}
+
+@media (max-width: "850px") {
+  .icarePage {
+    .formBox {
+      h1 {
+        font-size: 35px;
+      }
+      form {
+        width: 100%;
+        .inputs {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: "600px") {
+  .icarePage {
+    padding-top: 80px;
+    .imgBanner {
+      padding-left: 50px;
+
+      &::after {
+        left: 50px;
+      }
+    }
+  }
+}

@@ -86,7 +86,7 @@ const Footer = () => {
           <h4>Yeni xəbərlər üçün Abunə olun </h4>
           {/* {show && <span className="errorMesg">E-poçt  qeyd olunmalıdır</span>} */}
           <div className="inputMsg">
-            <input onChange={(e) => setInputData(e.target.value)} type="text" placeholder="E-Poçt daxil edin " />
+            <input  type="text" placeholder="E-Poçt daxil edin " />
             <div  className="sendBox"><BiLogoTelegram/></div>
           </div>
         </div>

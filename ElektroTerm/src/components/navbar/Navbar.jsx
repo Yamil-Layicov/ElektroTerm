@@ -146,9 +146,9 @@ const Navbar = ({color}) => {
             </div>
           </div>
         </div>
-        <div className="instaIcon">
+        {/* <div className="instaIcon">
           <span><InstagramIcon /></span>
-        </div>
+        </div> */}
         <div className="mainRight">
           <div className="right">
             <div className="helpdesk">
