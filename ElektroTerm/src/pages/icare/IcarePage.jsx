@@ -3,31 +3,39 @@ import "./icarePage.scss";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import { basicSchema } from "./shemas";
+import { toast } from "react-toastify";
 
 const onSubmit = async (values, actions) => {
   console.log(actions);
   console.log(values);
   await new Promise((resolve) => {
-    setTimeout(resolve, 1000)
-  })
+    setTimeout(resolve, 1000);
+  });
+  toast.success('Mesaj göndərildi');
   actions.resetForm();
-}
+};
 
 const IcarePage = () => {
- 
-  const {handleSubmit, errors, handleChange, isSubmitting, touched, handleBlur, values} = useFormik({
+  const {
+    handleSubmit,
+    errors,
+    handleChange,
+    isSubmitting,
+    touched,
+    handleBlur,
+    values,
+  } = useFormik({
     initialValues: {
       email: "",
-      age: "",
-      password: "",
-      confirmPassword: "",
+      phone: "",
+      name: "",
+      surName: "",
     },
     validationSchema: basicSchema,
     onSubmit,
   });
 
   // console.log(errors);
- 
 
   return (
     <>
@@ -56,50 +64,58 @@ const IcarePage = () => {
           >
             <div className="inputs">
               <div className="input">
-              <input
-                value={values.email}
-                onChange={handleChange}
-                id="email"
-                type="email"
-                onBlur={handleBlur}
-                placeholder="email"
-                className={errors.email && touched.email ? "inputError" : ""}
-              />
-              {errors.email && touched.email && <small>{errors.email}</small>}
+                <input
+                  value={values.name}
+                  onChange={handleChange}
+                  id="name"
+                  type="text"
+                  onBlur={handleBlur}
+                  placeholder="Ad"
+                  className={
+                    errors.name && touched.name ? "inputError" : ""
+                  }
+                />
+                {errors.name && touched.name && <small>{errors.name}</small>}
               </div>
-             <div className="input">
-             <input
-                value={values.age}
-                onChange={handleChange}
-                id="age"
-                type="number"
-                onBlur={handleBlur}
-                placeholder="age"
-                className={errors.age && touched.age ? "inputError" : ""}
-              />
-              {errors.age && touched.age && <small>{errors.age}</small>}
-             </div>
-             <div className="input">
-             <input
-                value={values.password}
-                onChange={handleChange}
-                id="password"
-                type="password"
-                onBlur={handleBlur}
-                placeholder="password"
-                className={errors.password && touched.password ? "inputError" : ""}
-              />
-             </div>
               <div className="input">
-              <input
-                value={values.confirmPassword}
-                onChange={handleChange}
-                id="confirmPassword"
-                type="password"
-                onBlur={handleBlur}
-                placeholder="password"
-                className={errors.confirmPassword && touched.confirmPassword ? "inputError" : ""}
-              />
+                <input
+                  value={values.surName}
+                  onChange={handleChange}
+                  id="surName"
+                  type="text"
+                  onBlur={handleBlur}
+                  placeholder="Soyad"
+                  className={
+                    errors.surName && touched.surName
+                      ? "inputError"
+                      : ""
+                  }
+                />
+                {errors.surName && touched.surName && <small>{errors.surName}</small>}
+              </div>
+              <div className="input">
+                <input
+                  value={values.email}
+                  onChange={handleChange}
+                  id="email"
+                  type="email"
+                  onBlur={handleBlur}
+                  placeholder="E-poçt"
+                  className={errors.email && touched.email ? "inputError" : ""}
+                />
+                {errors.email && touched.email && <small>{errors.email}</small>}
+              </div>
+              <div className="input">
+                <input
+                  value={values.phone}
+                  onChange={handleChange}
+                  id="phone"
+                  type="number"
+                  onBlur={handleBlur}
+                  placeholder="Mobil nömrə"
+                  className={errors.phone && touched.phone ? "inputError" : ""}
+                />
+                {errors.phone && touched.phone && <small>{errors.phone}</small>}
               </div>
             </div>
             <textarea
@@ -110,7 +126,9 @@ const IcarePage = () => {
               placeholder="qeyd"
             ></textarea>
             <div>
-              <button disabled={isSubmitting} type="submit">mesaj göndərin</button>
+              <button disabled={isSubmitting} type="submit">
+                mesaj göndərin
+              </button>
             </div>
           </motion.form>
         </div>
