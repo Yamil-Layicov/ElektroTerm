@@ -32,7 +32,7 @@ const NewsDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            Xəbər {id}
+            Xəbərlər
           </motion.h1>
         </div>
         <div className="newsDetailBox">
