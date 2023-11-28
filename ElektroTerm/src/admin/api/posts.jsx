@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://res.hill.az/api',
+  baseURL: 'https://api.elektroterm.az/api',
 });
 
 export default instance;

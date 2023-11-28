@@ -7,7 +7,6 @@ import AdminLayout from '../admin/adminLayout/AdminLayout'
 import AdminHome from '../admin/pages/home/AdminHome'
 import Users from '../admin/pages/users/Users'
 import AdminAbout from '../admin/pages/about/AdminAbout'
-import AdminFooter from '../admin/pages/footer/AdminFooter'
 import AdminGallery from '../admin/pages/gallery/AdminGallery'
 import AdminReservation from '../admin/pages/reservation/AdminReservation'
 import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
@@ -19,6 +18,7 @@ import IcarePage from '../pages/icare/IcarePage'
 import NewsPage from '../pages/news/NewsPage'
 import NewsLayout from '../pages/news/newsLayout/NewsLayout'
 import NewsDetail from '../pages/news/newsDetail/NewsDetail'
+import Settings from '../admin/pages/setting/Settings'
 
 
 const routes = [
@@ -83,8 +83,8 @@ const routes = [
         element: <PrivateRoute><AdminAbout /></PrivateRoute>,
       },
       {
-        path: 'footer',
-        element: <PrivateRoute><AdminFooter /></PrivateRoute>,
+        path: 'tənzimləmələr',
+        element: <PrivateRoute><Settings  /></PrivateRoute>,
       },
       {
         path: 'menu',

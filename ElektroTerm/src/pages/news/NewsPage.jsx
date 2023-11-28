@@ -45,7 +45,6 @@ const NewsPage = () => {
 
   return (
     <>
-      <Navbar color={"#1C1F2E"} />
       <div className="newsPage">
         <div className="imgBanner">
           <motion.h1

@@ -9,7 +9,6 @@ import { FaMailBulk } from "react-icons/fa";
 const ContactPage = () => {
   return (
     <>
-      <Navbar color={"#1C1F2E"} />
       <div className="contactPage">
         <div className="imgBanner">
           <motion.h1

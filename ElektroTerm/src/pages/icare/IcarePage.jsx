@@ -39,7 +39,6 @@ const IcarePage = () => {
 
   return (
     <>
-      <Navbar color={"#1C1F2E"} />
       <div className="icarePage">
         <div className="imgBanner">
           <motion.h1

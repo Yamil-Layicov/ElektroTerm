@@ -27,7 +27,6 @@ const AboutPage = () => {
 
   return (
     <>
-    <Navbar color={"#1C1F2E"}/>
     <div className='aboutPage'>
         <div className="imgBanner">
           <motion.h1

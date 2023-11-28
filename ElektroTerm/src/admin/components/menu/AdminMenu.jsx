@@ -33,8 +33,8 @@ const menu = [
       },
       {
         id: 2,
-        title: "Footer",
-        url: "/admin/footer",
+        title: "Tənzimləmələr",
+        url: "/admin/tənzimləmələr",
         icon: "/product.svg",
       },
       {

@@ -3,17 +3,20 @@ import { useEffect, useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
 import api from "../../admin/api/posts";
 import navImg from "./navImg.png";
 
 
-const Navbar = ({color}) => {
+const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [isOpenNavbar, setIsOpenNavbar] = useState(false);
   const [navData, setNavData] = useState([]);
+
+  const {pathname} = useLocation();
+  console.log(pathname);
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -86,7 +89,7 @@ const Navbar = ({color}) => {
 
   return (
     <>
-      <nav className={`${navbar && "navActive"}`} style={{backgroundColor:navbar ? " " : color}}>
+      <nav className={`${navbar && "navActive"}`} style={{backgroundColor:navbar ? " " : pathname === "/" ? "transparent" : "#1C1F2E"}}>
         <div className="left">
           <div className="leftLogo">
             <div className="logo">

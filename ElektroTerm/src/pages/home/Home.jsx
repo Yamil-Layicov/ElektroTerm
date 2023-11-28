@@ -6,7 +6,6 @@ import News from "../../components/news/News";
 const Home = () => {
   return (
     <div>
-      <Navbar color={"transparent"}/>
       <Slider/>
       <About/>
       <News/>
