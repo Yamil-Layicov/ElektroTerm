@@ -37,7 +37,12 @@ const AboutPage = () => {
           >Haqqımızda</motion.h1>
         </div>
         <div className="aboutContent">
-        <div className="imgContainer">
+        <motion.div 
+          initial={{opacity:0, x:-150}}
+          whileInView ={{opacity:1, x:0}}
+          transition={{duration:1, delay:0.2}}
+          viewport={{once:true,amaount:1}}
+         className="imgContainer">
           <div className="imgOne" >
             <img src={aboutData.image_1}alt=""/>
           </div>
@@ -49,8 +54,13 @@ const AboutPage = () => {
             <img src={aboutData.image_3}alt=""/>
             </div>
           </div>
-        </div>
-        <div className="textContainer">
+        </motion.div>
+        <motion.div
+         initial={{opacity:0, x:150}}
+         whileInView ={{opacity:1, x:0}}
+         transition={{duration:1.3, delay:0.3}}
+         viewport={{once:true,amaount:1}}
+         className="textContainer">
           <h1>{aboutData.title}</h1>
           <p className="first">
           Nə üçün biz?   
@@ -82,7 +92,7 @@ const AboutPage = () => {
             </span>
             <span>Mütəxəssislərdən ibarət komanda</span>
           </div>
-        </div>
+        </motion.div>
       </div>
       </div>
     </>

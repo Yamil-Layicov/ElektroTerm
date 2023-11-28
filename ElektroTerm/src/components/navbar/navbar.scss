@@ -158,7 +158,7 @@ nav {
       }
 
       .logo {
-        width: 160px;
+        width: 220px;
         color: white;
         display: flex;
         align-items: center;
@@ -172,7 +172,10 @@ nav {
 
         .iconMenu {
           background-color: #10d0a1;
-          padding: 3px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -306,6 +309,7 @@ nav {
       }
     }
   }
+  
 }
 
 .navActive {

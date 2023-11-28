@@ -4,14 +4,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  
 
   return (
     <>
       {useRoutes(routes)}
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -21,7 +20,6 @@ const App = () => {
         pauseOnHover
         theme="light"
       />
-      <ToastContainer />
     </>
   );
 };

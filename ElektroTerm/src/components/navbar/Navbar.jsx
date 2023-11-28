@@ -1,17 +1,13 @@
-import BlurOnOutlinedIcon from "@mui/icons-material/BlurOnOutlined";
 import "./navbar.scss";
 import { useEffect, useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/empty/logo.jpg";
 import fb from "../../assets/socials/facebook_icon.svg";
 import insta from "../../assets/socials/instagram_icon.svg";
 import api from "../../admin/api/posts";
 import navImg from "./navImg.png";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from '@mui/icons-material/Facebook';
 
 
 const Navbar = ({color}) => {

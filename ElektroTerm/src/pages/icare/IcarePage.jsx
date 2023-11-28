@@ -58,7 +58,7 @@ const IcarePage = () => {
           <motion.form
             initial={{ opacity: 0, y: 120 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true, amaount: 1 }}
             onSubmit={handleSubmit}
           >
