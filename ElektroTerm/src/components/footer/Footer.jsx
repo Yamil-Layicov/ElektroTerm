@@ -9,8 +9,6 @@ import {useNavigate} from 'react-router-dom';
 const Footer = () => {
 
   const [navData, setNavData] = useState([])
-  // const [inputData, setInputData] = useState('')
-  // const [show, setShow] = useState(false)
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -79,7 +77,7 @@ const Footer = () => {
           <h4>Əlaqə məlumatı</h4>
           <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
           <p>{navData?.home_phone}</p>
-          <p>{navData?.email}</p>
+          <p><a style={{color:"#A9B7D1", textDecoration:"none"}} href={`mailto:${navData?.email}`}>{navData?.email}</a></p>
         </div>
         <div className="subcriber">
           <h4>Yeni xəbərlər üçün Abunə olun </h4>

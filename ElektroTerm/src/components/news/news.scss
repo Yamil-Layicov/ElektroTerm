@@ -56,13 +56,13 @@
 
       .inner-carousel {
         display: flex;
+        
         .item {
           min-width: 420px;
           position: relative;
           background-color: rgb(255, 255, 255);
           margin: 0 18px;
           overflow: hidden;
-          background-color: #F4F4F4;
 
           &:nth-child(1) {
             margin-right: 18px;
@@ -82,8 +82,9 @@
           }
 
           .deatilSpecialist {
-            padding: 40px 0 0 40px;
+            padding: 40px 10px 0 40px;
             font-size: 24px;
+            height: 280px;
           
             .date {
               background-color: #674df0;
@@ -115,12 +116,14 @@
 
             button{
               border: none;
-              background-color: white;
+              background-color: #F7F7F9;
               font-size: 25px;
               color: gray;
               padding: 18px 22px 14px 22px;
               margin-top: 20px;
               transition: all .3s ease-in-out;
+              position: absolute;
+              bottom: 0;
   
               &:hover{
                   background-color: #29f0b4;
