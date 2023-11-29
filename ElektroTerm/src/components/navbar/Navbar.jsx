@@ -16,7 +16,6 @@ const Navbar = () => {
   const [navData, setNavData] = useState([]);
 
   const {pathname} = useLocation();
-  console.log(pathname);
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -55,29 +54,33 @@ const Navbar = () => {
   const navigate1 = () => {
     navigate("/");
     setIsOpenNavbar(false);
+    moveToTop();
   };
   const navigate2 = () => {
     navigate("/haqqımızda");
     setIsOpenNavbar(false);
+    moveToTop();
   };
   const navigate3 = () => {
     navigate("/xəbərlər");
     setIsOpenNavbar(false);
+    moveToTop();
   };
   const navigate4 = () => {
     navigate("/İcarə");
     setIsOpenNavbar(false);
+    moveToTop();
   };
   const navigate5 = () => {
     navigate("/əlaqə");
     setIsOpenNavbar(false);
+    moveToTop();
   };
 
   useEffect(() => {
     const fetchSettings = async () => {
       try {
         const response = await api.get("settings");
-        console.log(response.data);
         setNavData(response.data);
       } catch (error) {
         console.error(error);

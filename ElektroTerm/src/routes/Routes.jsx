@@ -1,24 +1,28 @@
-import HomeLayout from '../pages/homeLayout/HomeLayout'
-import Home from '../pages/home/Home'
-import Login from '../pages/login/Login'
-import Error404 from '../pages/error404/Error404'
-import PrivateRoute from './PrivateRoute'
-import AdminLayout from '../admin/adminLayout/AdminLayout'
-import AdminHome from '../admin/pages/home/AdminHome'
-import Users from '../admin/pages/users/Users'
-import AdminAbout from '../admin/pages/about/AdminAbout'
-import AdminGallery from '../admin/pages/gallery/AdminGallery'
-import AdminReservation from '../admin/pages/reservation/AdminReservation'
-import AdminMenuPage from '../admin/pages/menu/AdminMenuPage'
+import HomeLayout from '../pages/homeLayout/HomeLayout';
+import Home from '../pages/home/Home';
+import Login from '../pages/login/Login';
+import Error404 from '../pages/error404/Error404';
+import PrivateRoute from './PrivateRoute';
+import AdminLayout from '../admin/adminLayout/AdminLayout';
+import AdminHome from '../admin/pages/home/AdminHome';
+import Users from '../admin/pages/users/Users';
+import AdminAbout from '../admin/pages/about/AdminAbout';
+import AdminGallery from '../admin/pages/gallery/AdminGallery';
+import AdminReservation from '../admin/pages/reservation/AdminReservation';
+
+import AdminNewsLayout from '../admin/pages/news/adminNewsLayout/AdminNewsLayout';
+import AdminNews from '../admin/pages/news/AdminNews';
+import NewsCreate from '../admin/pages/news/newsCreate/newsCreate';
+import NewsEdit from '../admin/pages/news/newsEdit/newsEdit';
 
 
 import AboutPage from '../pages/about/AboutPage';
 import ContactPage from '../pages/contact/ContactPage';
-import IcarePage from '../pages/icare/IcarePage'
-import NewsPage from '../pages/news/NewsPage'
-import NewsLayout from '../pages/news/newsLayout/NewsLayout'
-import NewsDetail from '../pages/news/newsDetail/NewsDetail'
-import Settings from '../admin/pages/setting/Settings'
+import IcarePage from '../pages/icare/IcarePage';
+import NewsPage from '../pages/news/NewsPage';
+import NewsLayout from '../pages/news/newsLayout/NewsLayout';
+import NewsDetail from '../pages/news/newsDetail/NewsDetail';
+import Settings from '../admin/pages/setting/Settings';
 
 
 const routes = [
@@ -87,8 +91,22 @@ const routes = [
         element: <PrivateRoute><Settings  /></PrivateRoute>,
       },
       {
-        path: 'menu',
-        element: <PrivateRoute><AdminMenuPage /></PrivateRoute>,
+        path: 'xəbərlər',
+        element: <PrivateRoute><AdminNewsLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><AdminNews/></PrivateRoute>,
+          },
+          {
+            path:"yarat",
+            element: <PrivateRoute><NewsCreate/></PrivateRoute>,
+          },
+          {
+            path:":id",
+            element: <PrivateRoute><NewsEdit/></PrivateRoute>,
+          },
+        ]
       },
       {
         path: 'gallery',

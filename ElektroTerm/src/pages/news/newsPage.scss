@@ -41,6 +41,8 @@
       gap: 40px;
       .box {
         background-color: #f4f4f4;
+        height: 520px;
+        position: relative;
         .imgBox {
           img {
             width: 100%;
@@ -57,7 +59,7 @@
             font-size: 13px;
           }
           .title{
-            font-size: 34px;
+            font-size: 20px;
             font-weight: 500;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             padding-top: 20px;
@@ -70,6 +72,9 @@
             padding: 18px 22px 14px 22px;
             margin-top: 20px;
             transition: all .3s ease-in-out;
+            position: absolute;
+            bottom: 0;
+            left: 40px;
 
             &:hover{
                 background-color: #29f0b4;
@@ -126,6 +131,15 @@
 
       &::after{
         left: 50px;
+      }
+    }
+    .newsBoxes{
+      .boxes{
+        .box{
+          button{
+            left: 20px !important;
+          }
+        }
       }
     }
   }

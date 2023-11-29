@@ -16,7 +16,6 @@ const Footer = () => {
     const fetchSettings = async () => {
       try {
         const response = await api.get("settings");
-        console.log(response.data);
         setNavData(response.data)
       } catch (error) {
         console.error(error);

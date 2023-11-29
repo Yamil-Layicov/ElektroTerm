@@ -39,8 +39,8 @@ const menu = [
       },
       {
         id: 3,
-        title: "Menyu",
-        url: "/admin/menu",
+        title: "Xəbərlər",
+        url: "/admin/xəbərlər",
         icon: "/order.svg",
       },
       {
