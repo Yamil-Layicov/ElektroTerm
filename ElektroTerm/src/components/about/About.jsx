@@ -1,9 +1,28 @@
 import { MdDone } from "react-icons/md";
 import "./about.scss";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import api from "../../admin/api/posts";
 
 
 const About = () => {
+
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("about");
+        setAboutData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
 
   return (
     <div className="aboutComponent">
@@ -21,16 +40,18 @@ const About = () => {
           </div>
           <div className="img">
             <img
-              src="https://layerdrops.com/krowd/assets/images/about-thumb-1.jpg"
+              src={aboutData?.image_1}
               alt=""
             />
           </div>
         </div>
         <div className="smallImg">
+          <div className="img">
           <img
-            src="https://layerdrops.com/krowd/assets/images/about-thumb-2.jpg"
+            src={aboutData?.image_2}
             alt=""
           />
+          </div>
         </div>
       </motion.div>
       <motion.div
@@ -40,12 +61,10 @@ const About = () => {
         viewport={{once:true,amaount:1}}
        className="right">
         <p className="h1">
-          We Help at Every Step From Concept <br /> to Market
+          {aboutData?.title}
         </p>
         <p className="h4">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised.
+          {aboutData?.content}
         </p>
         <div className="bigBox">
           <div className="doneBoxes">

@@ -4,7 +4,7 @@ import { GoArrowRight } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import api from "../../admin/api/posts";
 import { useEffect, useState } from "react";
-
+import { convertDate } from "../../helper/DateFns";
 
 const NewsPage = () => {
   const [newsData, setNewsData] = useState([]);
@@ -23,7 +23,6 @@ const NewsPage = () => {
       try {
         const response = await api.get("blogs");
         setNewsData(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -40,9 +39,9 @@ const NewsPage = () => {
       const lastSpaceIndex = truncatedText.lastIndexOf(" ");
 
       if (lastSpaceIndex !== -1 && lastSpaceIndex < maxLength - 1) {
-        return truncatedText.slice(0, lastSpaceIndex);
+        return truncatedText.slice(0, lastSpaceIndex) + "...";
       } else {
-        return truncatedText;
+        return truncatedText + "...";
       }
     }
   };
@@ -62,18 +61,18 @@ const NewsPage = () => {
         <div className="newsBoxes">
           <div className="boxes">
             {newsData.map((box) => (
-                <div key={box.id} className="box">
-                  <div className="imgBox">
-                    <img src={box.image} alt="" />
-                  </div>
-                  <div className="textBox">
-                    <p className="date">1 APRIL, 2020</p>
-                    <p className="title">{truncateText(box?.title, 110)}</p>
-                    <button onClick={() => handleId(box.id)}>
-                      <GoArrowRight />
-                    </button>
-                  </div>  
+              <div key={box.id} className="box">
+                <div className="imgBox">
+                  <img src={box.image} alt="" />
                 </div>
+                <div className="textBox">
+                  <p className="date">{convertDate(box?.created_at)}</p>
+                  <p className="title">{truncateText(box?.title, 110)}</p>
+                  <button onClick={() => handleId(box.id)}>
+                    <GoArrowRight />
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>

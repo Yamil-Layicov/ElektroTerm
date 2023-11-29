@@ -3,6 +3,8 @@ import "./newsDetail.scss";
 import api from "../../../admin/api/posts";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+import { convertDate } from "../../../helper/DateFns";
+
 
 const NewsDetail = () => {
   const [newsData, setNewsData] = useState([]);
@@ -20,6 +22,7 @@ const NewsDetail = () => {
 
     fetchSettings();
   }, []);
+
 
   return (
     <>
@@ -41,7 +44,7 @@ const NewsDetail = () => {
                 alt=""
               />
             </div>
-            <p className="date">3 APRIL, 2020</p>
+            <p className="date">{convertDate(newsData?.created_at)}</p>
             <p className="title">
               {newsData?.title}
             </p>

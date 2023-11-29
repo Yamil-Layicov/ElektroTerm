@@ -97,7 +97,7 @@ const Navbar = () => {
           <div className="leftLogo">
             <div className="logo">
               <img
-                src="https://t4.ftcdn.net/jpg/04/06/62/77/360_F_406627778_aL7egoVcnIuO1dsCGVDjgvdDGa9zJU1k.jpg"
+                src={navData?.image}
                 alt=""
                 style={{borderRadius:"20%", width:"70px", height:"70px"}}
               />
@@ -173,7 +173,7 @@ const Navbar = () => {
             <div className="logo" style={{ height: "40px" }}>
               <img
                 style={{ borderRadius:"20%", width:"50px", height:"50px" }}
-                src="https://t4.ftcdn.net/jpg/04/06/62/77/360_F_406627778_aL7egoVcnIuO1dsCGVDjgvdDGa9zJU1k.jpg"
+                src={navData?.image}
                 alt=""
               />
               <div onClick={() => setIsOpenNavbar(false)} className="iconMenu">
@@ -208,6 +208,7 @@ const Navbar = () => {
                 </span>
                 <span>
                   Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22
+                  {/* {navData?.address} */}
                 </span>
               </p>
               <p>
@@ -226,7 +227,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>{navData?.home_phone}</span>
+                <span>{navData?.phone}</span>
               </p>
               <p>
                 <span>
@@ -237,7 +238,7 @@ const Navbar = () => {
                 </span>
                 <span>{navData?.email}</span>
               </p>
-              <div className="socials">
+              {/* <div className="socials">
                 <span>
                   <a href={navData?.facebook} rel="noreferrer" target="_blank">
                     <img
@@ -257,7 +258,7 @@ const Navbar = () => {
                   </a>
                 </span>
                 <span></span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
