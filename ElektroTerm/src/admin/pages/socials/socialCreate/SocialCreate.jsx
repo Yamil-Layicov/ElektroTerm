@@ -47,7 +47,7 @@ const SocialCreate = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Yeni xəbər yarat</h4>
+      <h4>Yeni sosial yarat</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>

@@ -66,7 +66,7 @@ const SocialEdit = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Xeber Redaktə et</h4>
+      <h4>Sosial Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>

@@ -18,7 +18,6 @@ const SliderEdit = () => {
       try {
         const response = await api.get(`sliders/${id}`);
 
-        setContent(response.data.content);
         setTitle(response.data.title);
         setImage(response.data.image);
       } catch (error) {
@@ -67,7 +66,7 @@ const SliderEdit = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Xeber Redaktə et</h4>
+      <h4>Slider Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
           <div>
