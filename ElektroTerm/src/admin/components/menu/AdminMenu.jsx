@@ -45,8 +45,8 @@ const menu = [
       },
       {
         id: 4,
-        title: "Qalereya",
-        url: "/admin/gallery",
+        title: "Sosial",
+        url: "/admin/sosials",
         icon: "/post2.svg",
       },
     ],
@@ -57,8 +57,8 @@ const menu = [
     listItems: [
       {
         id: 1,
-        title: "Rezervasiya",
-        url: "/admin/reservation",
+        title: "Slider",
+        url: "/admin/slider",
         icon: "/element.svg",
       },
       {

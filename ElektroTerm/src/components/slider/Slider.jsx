@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import img1 from "./imgs/a1.jpg";
 import img2 from "./imgs/a2.jpg";
-import InstagramIcon from "@mui/icons-material/Instagram";
+
 
 const Slider = () => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -16,6 +16,10 @@
     align-items: center;
     gap: 20px;
 
+    .icon{
+      cursor: pointer;
+    }
+
     .notification {
       position: relative;
 
@@ -45,6 +49,10 @@
         border-radius: 50%;
         object-fit: cover;
       }
+    }
+
+    .expandIcon{
+      cursor: pointer;
     }
 
     .logOutAdmin {

@@ -61,8 +61,8 @@ const Footer = () => {
           Lorem quas utamur delicata qui, vix ei prima mentitum omnesque. Duo corrumpit cotidieque ne.
           </p>
           <div className="socials">
-            <a href={navData.facebook} rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
-            <a href={navData?.instagram} rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a>
+            {/* <a href={navData.facebook} rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
+            <a href={navData?.instagram} rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a> */}
           </div>
         </div>
         <div className="secondBox">
@@ -92,11 +92,6 @@ const Footer = () => {
         <span>
           © Copyright {navData?.rights}
         </span>
-        <div className="right">
-          {/* <span>Terms and conditions</span>
-          <span>Privacy policy</span>
-          <span>Pricing</span> */}
-        </div>
       </div>
     </div>
   );

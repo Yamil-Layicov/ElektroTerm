@@ -1,4 +1,4 @@
-import "./adminNews.scss";
+import "./socials.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
 import { useNavigate } from "react-router-dom";
@@ -6,17 +6,17 @@ import {BiEditAlt} from 'react-icons/bi'
 import {RiDeleteBin5Line} from 'react-icons/ri'
 
 
-const AdminNews = () => {
+const Socials = () => {
   const navigate = useNavigate();
 
   const [bloqData, setBloqData] = useState([]);
   
-
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await api.get("blogs");
+        const response = await api.get("social");
         setBloqData(response.data);
+        console.log(response.data);
 
       } catch (error) {
         console.error(error);
@@ -37,7 +37,7 @@ const AdminNews = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await api.delete(`blogs/${id}`);
+      const response = await api.delete(`social/${id}`);
 
       if(response) return setTimeout(() => {
         window.location.reload()
@@ -50,7 +50,7 @@ const AdminNews = () => {
 
   return (
     <div className="adminBloq">
-      <h4>Xəbərlər</h4>
+      <h4>Socials</h4>
       <div className="tableContent">
         <div className="createNewBtn">
           <button onClick={handleCreate}>Yenisini yarat +</button>
@@ -58,15 +58,13 @@ const AdminNews = () => {
       <table>
         <tr>
           <th>Şəkil *</th>
-          <th>Başlıq *</th>
-          <th>Məzmun *</th>
+          <th>Url *</th>
           <th>Parametrlər</th>
         </tr>
         {bloqData.map((item) => (
             <tr key={item.id}>
-              <td><img style={{width:"100px", height:"100px"}} src={item.image} alt="" /></td>
-              <td>{item.title}</td> 
-              <td>{item.content}</td>
+              <td><img style={{width:"100px", height:"100px"}} src={item.logo} alt="" /></td>
+              <td>{item.url}</td>
               <td>
               <button onClick={() => handleEdit(item.id)}><BiEditAlt/></button>
                 <button onClick={() => handleDelete(item.id)}><RiDeleteBin5Line/></button>
@@ -79,4 +77,4 @@ const AdminNews = () => {
   );
 };
 
-export default AdminNews;
+export default Socials;

@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./login.scss";
-import axios from "axios";
 import { useState } from "react";
+import api from "../../admin/api/posts";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,8 +20,8 @@ const Login = () => {
 
   const loginUser = async () => {
     try {
-      const response = await axios.post("https://api.nane.az/api/login",formData);
-         setUser(response.data.token);
+      const response = await api.post("login",formData);
+         setUser(response.data);
          navigate("/admin");
      } catch (error) {
       console.log(error);
@@ -37,14 +37,14 @@ const Login = () => {
       alert("bos qoyma");
     }
     else if (
-      formData.email !== "jafaraghamaliyev@gmail.com" ||
-      formData.password !== "cefer123"
+      formData.email !== "marketing@gmail.com" ||
+      formData.password !== "marketing2023$!"
     ){
       alert("email veya parol sehvdir")
     }
     if (
-      formData.email === "jafaraghamaliyev@gmail.com" &&
-      formData.password === "cefer123"
+      formData.email === "marketing@gmail.com" &&
+      formData.password === "marketing2023$!"
     ) {
       loginUser();
     }

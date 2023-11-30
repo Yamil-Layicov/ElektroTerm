@@ -7,13 +7,22 @@ import AdminLayout from '../admin/adminLayout/AdminLayout';
 import AdminHome from '../admin/pages/home/AdminHome';
 import Users from '../admin/pages/users/Users';
 import AdminAbout from '../admin/pages/about/AdminAbout';
-import AdminGallery from '../admin/pages/gallery/AdminGallery';
-import AdminReservation from '../admin/pages/reservation/AdminReservation';
+
 
 import AdminNewsLayout from '../admin/pages/news/adminNewsLayout/AdminNewsLayout';
 import AdminNews from '../admin/pages/news/AdminNews';
 import NewsCreate from '../admin/pages/news/newsCreate/newsCreate';
 import NewsEdit from '../admin/pages/news/newsEdit/newsEdit';
+
+import SocialLayout from '../admin/pages/socials/socialLayout/SocialLayout';
+import Socials from '../admin/pages/socials/Socials';
+import SocialCreate from '../admin/pages/socials/socialCreate/SocialCreate';
+import SocialEdit from '../admin/pages/socials/socialEdit/SocialEdit';
+
+import AdminSliderLayout from '../admin/pages/slider/adminSliderLayout/AdminSliderLayout';
+import AdminSlider from '../admin/pages/slider/AdminSlider';
+import SliderCreate from '../admin/pages/slider/sliderCreate/SliderCreate';
+import SliderEdit from '../admin/pages/slider/sliderEdit/SliderEdit';
 
 
 import AboutPage from '../pages/about/AboutPage';
@@ -109,12 +118,40 @@ const routes = [
         ]
       },
       {
-        path: 'gallery',
-        element: <PrivateRoute><AdminGallery/></PrivateRoute>,
+        path: 'sosials',
+        element: <PrivateRoute><SocialLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><Socials/></PrivateRoute>,
+          },
+          {
+            path:"yarat",
+            element: <PrivateRoute><SocialCreate/></PrivateRoute>,
+          },
+          {
+            path:":id",
+            element: <PrivateRoute><SocialEdit/></PrivateRoute>,
+          },
+        ]
       },
       {
-        path: 'reservation',
-        element: <PrivateRoute><AdminReservation/></PrivateRoute>,
+        path: 'slider',
+        element: <PrivateRoute><AdminSliderLayout/></PrivateRoute>,
+        children:[
+          {
+            index:true,
+            element: <PrivateRoute><AdminSlider/></PrivateRoute>,
+          },
+          {
+            path:"yarat",
+            element: <PrivateRoute><SliderCreate/></PrivateRoute>,
+          },
+          {
+            path:":id",
+            element: <PrivateRoute><SliderEdit/></PrivateRoute>,
+          },
+        ]
       },
     ],
   },
