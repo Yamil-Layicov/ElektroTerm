@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../../../api/posts";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const NewsCreate = () => {
   const [title, setTitle] = useState([]);
@@ -39,6 +40,7 @@ const NewsCreate = () => {
       formData.append("image", image);
 
       const response = await api.post(`blogs`, formData);
+      toast.success("yenisi yaradildi")
 
       if (response) return navigate(-1);
     } catch (error) {

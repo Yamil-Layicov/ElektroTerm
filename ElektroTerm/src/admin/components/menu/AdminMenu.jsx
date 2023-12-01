@@ -122,7 +122,7 @@ const menu = [
 
 const AdminMenu = () => {
   return (
-    <div className='adminMenu'>
+    <div className='menu'>
      {menu.map(item => (
        <div className="item" key={item.id}>
        <div className="title">{item.title}</div>

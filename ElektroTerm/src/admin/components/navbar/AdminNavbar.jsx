@@ -15,7 +15,6 @@ const AdminNavbar = () => {
     setUser(false)
     navigate('/')
   }
-  
 
   const user = useAuth()
 
@@ -54,9 +53,7 @@ const AdminNavbar = () => {
       <span>ElektroTerm</span>
     </div>
     <div className="icons">
-      {/* <img src="/search.svg" className="icon"></img> */}
-      {/* <img src="/app.svg" className="icon"></img> */}
-      <img onClick={() => toggleFullscreen(this)} src="/expand.svg" className="expandIcon"></img>
+      <img onClick={() => toggleFullscreen(this)} src="/expand.svg" className="expandIcon icon"></img>
       <div className="notification">
         <img src="/notifications.svg" alt="" />
         <span>1</span>

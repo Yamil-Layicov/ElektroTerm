@@ -86,7 +86,7 @@ const SliderEdit = () => {
             </div>
           </div>
           <button type="submit">Yadda saxla</button>
-          <button type="submit" onClick={() => navigate("/admin/xəbərlər")}>Geri Qayıt</button>
+          <button type="submit" onClick={() => navigate("/admin/slider")}>Geri Qayıt</button>
         </form>
       </div>
     </div>
