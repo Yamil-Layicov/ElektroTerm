@@ -19,6 +19,7 @@
     gap: 20px;
 
     .icon{
+      cursor: pointer;
       @include sm{
         display: none;
       }
@@ -54,6 +55,16 @@
         border-radius: 50%;
         object-fit: cover;
       }
+    }
+  }
+  .logOutAdmin{
+    position: relative;
+    cursor: pointer;
+    .logOutBtn{
+      position: absolute;
+      top: 30px;
+      right: 6px;
+      cursor: pointer;
     }
   }
 }

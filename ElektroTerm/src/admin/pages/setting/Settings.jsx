@@ -1,7 +1,7 @@
 import "./settings.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
-
+import { FiUploadCloud } from "react-icons/fi";
 
 const Settings = () => {
   const [content1, setContent1] = useState([]);
@@ -14,7 +14,6 @@ const Settings = () => {
 
   const [image, setImage] = useState(null);
   const [previousImage, setPreviousImage] = useState(null);
-
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -72,9 +71,10 @@ const Settings = () => {
 
       const response = await api.post("settings", formData);
 
-      if(response) return setTimeout(() => {
-        window.location.reload()
-      }, 1000);
+      if (response)
+        return setTimeout(() => {
+          window.location.reload();
+        }, 1000);
     } catch (error) {
       console.log(error);
     }
@@ -102,7 +102,7 @@ const Settings = () => {
             />
           </div>
           <div>
-            <label>Telefon(mobil) *</label>
+            <label>Telefon(1) *</label>
             <input
               type="number"
               value={content3 || ""}
@@ -110,29 +110,32 @@ const Settings = () => {
             />
           </div>
           <div>
-            <label>Telefon(ofis) *</label>
+            <label>Telefon(2) *</label>
             <input
               type="text"
               value={content7 || ""}
               onChange={(e) => setContent7(e.target.value)}
             />
           </div>
-          <div>
+
+          {/* <div>
             <label>Facebook Keçidi *</label>
             <input
               type="text"
               value={content4 || ""}
               onChange={(e) => setContent4(e.target.value)}
             />
-          </div>
-          <div>
+          </div> */}
+
+          {/* <div>
             <label>İnstagram Keçidi*</label>
             <input
               type="text"
               value={content5 || ""}
               onChange={(e) => setContent5(e.target.value)}
             />
-          </div>
+          </div> */}
+
           <div>
             <label>Hüquqlar *</label>
             <input
@@ -143,9 +146,22 @@ const Settings = () => {
           </div>
           <div className="imageFile">
             <div>
-              <label>Logo</label>
+              <div className="logoText">
+              <span>Logo</span>
+                <span>
+                  <FiUploadCloud />
+                </span>
+              </div>
+              <label htmlFor="logo">
                 <img src={previousImage || image} alt="" />
-              <input type="file" accept="image/*" onChange={handleImage} />
+              </label>
+              <input
+                id="logo"
+                name="logo"
+                type="file"
+                accept="image/*"
+                onChange={handleImage}
+              />
             </div>
           </div>
           <button type="submit">Yadda saxla</button>

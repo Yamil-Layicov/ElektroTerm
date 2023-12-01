@@ -15,7 +15,7 @@ const menu = [
       },
       {
         id: 2,
-        title: "İstifadəçilər",
+        title: "Profil",
         url: "/admin/profil",
         icon: "/user.svg",
       },
@@ -61,18 +61,18 @@ const menu = [
         url: "/admin/slider",
         icon: "/element.svg",
       },
-      {
-        id: 2,
-        title: "Notes",
-        url: "/admin",
-        icon: "/note.svg",
-      },
-      {
-        id: 3,
-        title: "Forms",
-        url: "/admin",
-        icon: "/form.svg",
-      },
+      // {
+      //   id: 2,
+      //   title: "Notes",
+      //   url: "/admin",
+      //   icon: "/note.svg",
+      // },
+      // {
+      //   id: 3,
+      //   title: "Forms",
+      //   url: "/admin",
+      //   icon: "/form.svg",
+      // },
       {
         id: 4,
         title: "Calendar",
@@ -91,24 +91,24 @@ const menu = [
         url: "/admin",
         icon: "/setting.svg",
       },
-      {
-        id: 2,
-        title: "Backups",
-        url: "/admin",
-        icon: "/backup.svg",
-      },
+      // {
+      //   id: 2,
+      //   title: "Backups",
+      //   url: "/admin",
+      //   icon: "/backup.svg",
+      // },
     ],
   },
   {
     id: 5,
     title: "analytics",
     listItems: [
-      {
-        id: 1,
-        title: "Charts",
-        url: "/admin",
-        icon: "/chart.svg",
-      },
+      // {
+      //   id: 1,
+      //   title: "Charts",
+      //   url: "/admin",
+      //   icon: "/chart.svg",
+      // },
       {
         id: 2,
         title: "Çıxış",

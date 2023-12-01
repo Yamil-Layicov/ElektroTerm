@@ -5,7 +5,6 @@ import Error404 from '../pages/error404/Error404';
 import PrivateRoute from './PrivateRoute';
 import AdminLayout from '../admin/adminLayout/AdminLayout';
 import AdminHome from '../admin/pages/home/AdminHome';
-import Users from '../admin/pages/users/Users';
 import AdminAbout from '../admin/pages/about/AdminAbout';
 
 
@@ -32,6 +31,7 @@ import NewsPage from '../pages/news/NewsPage';
 import NewsLayout from '../pages/news/newsLayout/NewsLayout';
 import NewsDetail from '../pages/news/newsDetail/NewsDetail';
 import Settings from '../admin/pages/setting/Settings';
+import Profil from '../admin/pages/profil/Profil';
 
 
 const routes = [
@@ -89,7 +89,7 @@ const routes = [
       },
       {
         path: 'profil',
-        element: <PrivateRoute><Users/></PrivateRoute>,
+        element: <PrivateRoute><Profil/></PrivateRoute>,
       },
       {
         path: 'about',

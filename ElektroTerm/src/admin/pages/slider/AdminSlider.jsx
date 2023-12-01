@@ -58,7 +58,7 @@ const AdminSlider = () => {
       <table>
         <tr>
           <th>Şəkil *</th>
-          <th>Başlıq *</th>
+          <th>Mətn *</th>
           <th>Parametrlər</th>
         </tr>
         {bloqData.map((item) => (

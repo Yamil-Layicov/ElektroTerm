@@ -6,8 +6,14 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ProgressBar } from "react-loader-spinner";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+
 
 const AdminNews = () => {
+  const [showLoader, setShowLoader] = useState(true);
+
+
+
   const navigate = useNavigate();
 
   const handleEdit = (id) => {
@@ -21,6 +27,14 @@ const AdminNews = () => {
   const handleDelete = (id) => {
     mutation.mutate(id)
   };
+
+  useEffect(() => {
+    const loaderTimeout = setTimeout(() => {
+      setShowLoader(false);
+    }, 1000);
+
+    return () => clearTimeout(loaderTimeout);
+  }, []);
 
 
   const queryClient = useQueryClient();
@@ -43,6 +57,7 @@ const AdminNews = () => {
     queryFn: () => api.get("blogs"),
   });
 
+
   return (
     <div className="adminBloq">
       <h4>Xəbərlər</h4>
@@ -61,7 +76,7 @@ const AdminNews = () => {
             </tr>
           </thead>
           <tbody>
-            {isLoading ? (
+            {isLoading ||  showLoader  ? (
               <div className="progressBar">
                 <ProgressBar
                   height="80"
