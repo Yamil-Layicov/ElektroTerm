@@ -1,6 +1,7 @@
 import "./adminAbout.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
+import { FiUploadCloud } from "react-icons/fi";
 
 const AdminAbout = () => {
   const [title, setTitle] = useState([]);
@@ -98,21 +99,22 @@ const AdminAbout = () => {
 
       const response = await api.post("about", formData);
 
-      if(response) return setTimeout(() => {
-        window.location.reload()
-      }, 1000);
+      if (response)
+        return setTimeout(() => {
+          window.location.reload();
+        }, 1000);
     } catch (error) {
       console.log(error);
     }
   };
-
 
   return (
     <div className="adminAbout">
       <h4>Haqqımızda</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
-          <div>
+
+          <div className="div">
             <label>Başlıq *</label>
             <input
               type="text"
@@ -120,7 +122,8 @@ const AdminAbout = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div>
+
+          <div className="div">
             <label>Məzmun *</label>
             <textarea
               cols="30"
@@ -129,23 +132,59 @@ const AdminAbout = () => {
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <div className="imageFile">
+
+          <div className="imageFile div">
+
             <div className="inputBox">
-              <label htmlFor="img">Böyük şəkil</label>
-              <img src={previousImage_1 || image_1} alt="" />
-              <input id="img" type="file" accept="image/*" onChange={handleImage_1} />
+              <label htmlFor="img1">
+                <div className="textIcon">
+                  <span><FiUploadCloud /></span>
+                  <span>Böyük şəkil</span>
+                </div>
+                <img src={previousImage_1 || image_1} alt="" />
+              </label>
+
+              <input
+                id="img1"
+                type="file"
+                accept="image/*"
+                onChange={handleImage_1}
+              />
             </div>
             <div className="inputBox">
-              <label>Ortancıl şəkil</label>
-              <img src={previousImage_2 || image_2} alt="" />
-              <input type="file" accept="image/*" onChange={handleImage_2} />
+              <label htmlFor="img2">
+                <div className="textIcon">
+                  <span><FiUploadCloud /></span>
+                  <span>Ortancıl şəkil</span>
+                </div>
+                <img src={previousImage_2 || image_2} alt="" />
+              </label>
+
+              <input
+                id="img2"
+                type="file"
+                accept="image/*"
+                onChange={handleImage_2}
+              />
             </div>
             <div className="inputBox">
-              <label>Kiçik şəkil</label>
-              <img src={previousImage_3 || image_3} alt="" />
-              <input type="file" accept="image/*" onChange={handleImage_3} />
+              <label htmlFor="img3">
+                <div className="textIcon">
+                  <span><FiUploadCloud /></span>
+                  <span>Kiçik şəkil</span>
+                </div>
+                <img src={previousImage_3 || image_3} alt="" />
+              </label>
+
+              <input
+                id="img3"
+                type="file"
+                accept="image/*"
+                onChange={handleImage_3}
+              />
             </div>
           </div>
+
           <button type="submit">Yadda saxla</button>
         </form>
       </div>

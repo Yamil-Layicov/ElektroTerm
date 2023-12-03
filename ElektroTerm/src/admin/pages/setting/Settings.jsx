@@ -2,6 +2,7 @@ import "./settings.scss";
 import { useEffect, useState } from "react";
 import api from "../../api/posts";
 import { FiUploadCloud } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const Settings = () => {
   const [content1, setContent1] = useState([]);
@@ -66,9 +67,7 @@ const Settings = () => {
       const response = await api.post("settings", formData);
 
       if (response)
-        return setTimeout(() => {
-          window.location.reload();
-        }, 1000);
+       toast.success("ugurlu")
     } catch (error) {
       console.log(error);
     }
@@ -119,7 +118,6 @@ const Settings = () => {
               onChange={(e) => setContent6(e.target.value)}
             />
           </div>
-
           <div className="imageFile">
             <div className="logoBox">
               <label htmlFor="logo">
@@ -138,7 +136,6 @@ const Settings = () => {
               />
             </div>
           </div>
-
           <button type="submit">Yadda saxla</button>
         </form>
       </div>
