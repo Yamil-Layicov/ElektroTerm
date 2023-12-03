@@ -53,7 +53,7 @@ const AdminNavbar = () => {
       <span>ElektroTerm</span>
     </div>
     <div className="icons">
-      <img onClick={() => toggleFullscreen(this)} src="/expand.svg" className="expandIcon icon"></img>
+      <img onClick={() => toggleFullscreen(this)} src="/expand.svg" className="expandIcon"></img>
       <div className="notification">
         <img src="/notifications.svg" alt="" />
         <span>1</span>
@@ -63,7 +63,7 @@ const AdminNavbar = () => {
         <span>{user.user.name}</span>
       </div>
       <div onClick={() => setShowLog(!showLog)} className='logOutAdmin'>
-        <img src="/setting.svg" className="icon"/>
+        <img src="/setting.svg"/>
              {showLog && <motion.div
               initial={{opacity:0, y:-10}}
               animate={{opacity:1,y:0}}

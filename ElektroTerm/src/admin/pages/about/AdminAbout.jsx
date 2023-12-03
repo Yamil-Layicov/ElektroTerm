@@ -131,9 +131,9 @@ const AdminAbout = () => {
           </div>
           <div className="imageFile">
             <div className="inputBox">
-              <label>Böyük şəkil</label>
+              <label htmlFor="img">Böyük şəkil</label>
               <img src={previousImage_1 || image_1} alt="" />
-              <input type="file" accept="image/*" onChange={handleImage_1} />
+              <input id="img" type="file" accept="image/*" onChange={handleImage_1} />
             </div>
             <div className="inputBox">
               <label>Ortancıl şəkil</label>

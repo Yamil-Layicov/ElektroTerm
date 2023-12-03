@@ -19,11 +19,11 @@ import {
 const AdminHome = () => {
   return (
     <div className="adminHome">
-      <div className="box box1">
+      {/* <div className="box box1">
         <Suspense fallback={<div>Loading...</div>}>
           <TopBox />
         </Suspense>
-      </div>
+      </div> */}
       <div className="box box2">
         <Suspense fallback={<div>Loading...</div>}>
           <ChartBox {...chartBoxUser} />
@@ -34,11 +34,11 @@ const AdminHome = () => {
           <ChartBox {...chartBoxProduct} />
         </Suspense>
       </div>
-      <div className="box box4">
+      {/* <div className="box box4">
         <Suspense fallback={<div>Loading...</div>}>
           <PieChartBox />
         </Suspense>
-      </div>
+      </div> */}
       <div className="box box5">
         <Suspense fallback={<div>Loading...</div>}>
           <ChartBox {...chartBoxConversion} />
@@ -49,11 +49,11 @@ const AdminHome = () => {
           <ChartBox {...chartBoxRevenue} />
         </Suspense>
       </div>
-      <div className="box box7">
+      {/* <div className="box box7">
         <Suspense fallback={<div>Loading...</div>}>
           <BigChartBox />
         </Suspense>
-      </div>
+      </div> */}
       <div className="box box8">
         <Suspense fallback={<div>Loading...</div>}>
           <BarChartBox {...barChartBoxVisit} />

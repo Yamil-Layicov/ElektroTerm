@@ -7,8 +7,6 @@ const Settings = () => {
   const [content1, setContent1] = useState([]);
   const [content2, setContent2] = useState([]);
   const [content3, setContent3] = useState([]);
-  const [content4, setContent4] = useState([]);
-  const [content5, setContent5] = useState([]);
   const [content6, setContent6] = useState([]);
   const [content7, setContent7] = useState([]);
 
@@ -24,8 +22,6 @@ const Settings = () => {
         setContent1(response.data.address);
         setContent2(response.data.email);
         setContent3(response.data.phone);
-        setContent4(response.data.facebook);
-        setContent5(response.data.instagram);
         setContent6(response.data.rights);
         setContent7(response.data.home_phone);
 
@@ -63,8 +59,6 @@ const Settings = () => {
       formData.append("address", content1);
       formData.append("email", content2);
       formData.append("phone", content3);
-      formData.append("facebook", content4);
-      formData.append("instagram", content5);
       formData.append("rights", content6);
       formData.append("home_phone", content7);
       formData.append("image", image);
@@ -85,7 +79,7 @@ const Settings = () => {
       <h4>Tənzimləmələr</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
-          <div>
+          <div className="inputs">
             <label>Ünvan *</label>
             <input
               type="text"
@@ -93,7 +87,7 @@ const Settings = () => {
               onChange={(e) => setContent1(e.target.value)}
             />
           </div>
-          <div>
+          <div className="inputs">
             <label>Elektron ünvan *</label>
             <input
               type="text"
@@ -101,7 +95,7 @@ const Settings = () => {
               onChange={(e) => setContent2(e.target.value)}
             />
           </div>
-          <div>
+          <div className="inputs">
             <label>Telefon(1) *</label>
             <input
               type="number"
@@ -109,7 +103,7 @@ const Settings = () => {
               onChange={(e) => setContent3(e.target.value)}
             />
           </div>
-          <div>
+          <div className="inputs">
             <label>Telefon(2) *</label>
             <input
               type="text"
@@ -117,26 +111,7 @@ const Settings = () => {
               onChange={(e) => setContent7(e.target.value)}
             />
           </div>
-
-          {/* <div>
-            <label>Facebook Keçidi *</label>
-            <input
-              type="text"
-              value={content4 || ""}
-              onChange={(e) => setContent4(e.target.value)}
-            />
-          </div> */}
-
-          {/* <div>
-            <label>İnstagram Keçidi*</label>
-            <input
-              type="text"
-              value={content5 || ""}
-              onChange={(e) => setContent5(e.target.value)}
-            />
-          </div> */}
-
-          <div>
+          <div className="inputs">
             <label>Hüquqlar *</label>
             <input
               type="text"
@@ -144,16 +119,15 @@ const Settings = () => {
               onChange={(e) => setContent6(e.target.value)}
             />
           </div>
+
           <div className="imageFile">
-            <div>
-              <div className="logoText">
-              <span>Logo</span>
-                <span>
-                  <FiUploadCloud />
-                </span>
-              </div>
+            <div className="logoBox">
               <label htmlFor="logo">
-                <img src={previousImage || image} alt="" />
+              <div className="logo"> 
+                <span><FiUploadCloud /> </span>
+                <span className="text">Logo</span>
+              </div>
+              <img src={previousImage || image} alt="" />
               </label>
               <input
                 id="logo"
@@ -164,6 +138,7 @@ const Settings = () => {
               />
             </div>
           </div>
+
           <button type="submit">Yadda saxla</button>
         </form>
       </div>

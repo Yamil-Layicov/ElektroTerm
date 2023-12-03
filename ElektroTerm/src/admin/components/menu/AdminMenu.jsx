@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import './adminMenu.scss'
+import './adminMenu.scss';
+
 
 
 const menu = [
@@ -29,7 +30,7 @@ const menu = [
         id: 1,
         title: "Haqqimizda",
         url: "/admin/about",
-        icon: "/user.svg",
+        icon: "/form.svg",
       },
       {
         id: 2,
