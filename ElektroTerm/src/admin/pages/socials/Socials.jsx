@@ -49,7 +49,7 @@ const Socials = () => {
   }
 
   return (
-    <div className="adminBloq">
+    <div className="adminSocials">
       <h4>Socials</h4>
       <div className="tableContent">
         <div className="createNewBtn">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../../../api/posts";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import './newsCreate.scss';
 
 const NewsCreate = () => {
   const [title, setTitle] = useState([]);
@@ -49,7 +50,7 @@ const NewsCreate = () => {
   };
 
   return (
-    <div className="bloqEdit">
+    <div className="bloqCreate">
       <h4>Yeni xəbər yarat</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
@@ -77,10 +78,12 @@ const NewsCreate = () => {
               <input type="file" accept="image/*" onChange={handleImage} />
             </div>
           </div>
-          <button type="submit">Yadda saxla</button>
+         <div className="buttons">
+         <button type="submit">Yadda saxla</button>
           <button type="submit" onClick={() => navigate(-1)}>
             Geri Qayıt
           </button>
+         </div>
         </form>
       </div>
     </div>

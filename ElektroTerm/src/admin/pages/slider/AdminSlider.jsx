@@ -49,7 +49,7 @@ const AdminSlider = () => {
   }
 
   return (
-    <div className="adminBloq">
+    <div className="adminSlider">
       <h4>Sliders</h4>
       <div className="tableContent">
         <div className="createNewBtn">

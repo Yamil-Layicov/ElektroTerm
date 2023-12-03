@@ -65,7 +65,7 @@ const SliderEdit = () => {
 
 
   return (
-    <div className="bloqEdit">
+    <div className="sliderEdit">
       <h4>Slider Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>

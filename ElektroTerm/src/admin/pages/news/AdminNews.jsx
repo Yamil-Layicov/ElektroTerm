@@ -60,7 +60,7 @@ const AdminNews = () => {
               <th>Şəkil *</th>
               <th>Başlıq *</th>
               <th>Məzmun *</th>
-              <th>Parametrlər</th>
+              <th style={{width:"100px"}}>Parametrlər</th>
             </tr>
           </thead>
           <tbody>
@@ -81,7 +81,7 @@ const AdminNews = () => {
                 <tr key={item.id}>
                   <td>
                     <img
-                      style={{ width: "100px", height: "100px" }}
+                      style={{ width: "80px", height: "80px" }}
                       src={item.image}
                       alt=""
                     />

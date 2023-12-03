@@ -2,6 +2,8 @@ import "./newsEdit.scss";
 import { useEffect, useState } from "react";
 import api from "../../../api/posts";
 import { useParams, useNavigate } from "react-router-dom";
+import { FiUploadCloud } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 
 const NewsEdit = () => {
@@ -69,10 +71,10 @@ const NewsEdit = () => {
 
   return (
     <div className="bloqEdit">
-      <h4>Xeber Redaktə et</h4>
+      <h4>Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
-          <div>
+          <div className="div">
             <label>Başlıq *</label>
             <input
               type="text"
@@ -80,7 +82,7 @@ const NewsEdit = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div>
+          <div className="div">
             <label>Məzmun *</label>
             <textarea
               cols="30"
@@ -89,15 +91,28 @@ const NewsEdit = () => {
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <div className="imageFile">
-            <div className="inputBox">
-              <label>şəkil</label>
+          <div className="imageFile div">
+            <div className="logoBox">
+              <label htmlFor="logo">
+              <div className="logo"> 
+                <span><FiUploadCloud /> </span>
+                <span className="text">Şəkil</span>
+              </div>
               <img src={previousImage || image} alt="" />
-              <input type="file" accept="image/*"  onChange={handleImage} />
+              </label>
+              <input
+                id="logo"
+                name="logo"
+                type="file"
+                accept="image/*"
+                onChange={handleImage}
+              />
             </div>
           </div>
+          <div className="buttons">
           <button type="submit">Yadda saxla</button>
           <button type="submit" onClick={() => navigate("/admin/xəbərlər")}>Geri Qayıt</button>
+          </div>
         </form>
       </div>
     </div>
