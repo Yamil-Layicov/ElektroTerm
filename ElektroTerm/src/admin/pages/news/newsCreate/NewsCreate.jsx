@@ -3,6 +3,7 @@ import api from "../../../api/posts";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import './newsCreate.scss';
+import { FiUploadCloud } from "react-icons/fi";
 
 const NewsCreate = () => {
   const [title, setTitle] = useState([]);
@@ -41,7 +42,7 @@ const NewsCreate = () => {
       formData.append("image", image);
 
       const response = await api.post(`blogs`, formData);
-      toast.success("yenisi yaradildi")
+      toast.success("Yeni xəbər yaradıldı")
 
       if (response) return navigate(-1);
     } catch (error) {
@@ -51,19 +52,21 @@ const NewsCreate = () => {
 
   return (
     <div className="bloqCreate">
-      <h4>Yeni xəbər yarat</h4>
+      <h4>Yeni xəbər</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
-          <div>
+          <div className="div">
             <label>Başlıq *</label>
-            <input
-              type="text"
+            <textarea
+              cols="30"
+              rows="2"
               value={title || ""}
               onChange={(e) => setTitle(e.target.value)}
-            />
+            ></textarea>
           </div>
-          <div>
+          <div className="div">
             <label>Məzmun *</label>
+            
             <textarea
               cols="30"
               rows="7"
@@ -71,11 +74,22 @@ const NewsCreate = () => {
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
           </div>
-          <div className="imageFile">
-            <div className="inputBox">
-              <label>şəkil</label>
+          <div className="imageFile div">
+            <div className="logoBox">
+              <label htmlFor="logo">
+              <div className="logo"> 
+                <span><FiUploadCloud /> </span>
+                <span className="text">Şəkil</span>
+              </div>
               <img src={previousImage || image} alt="" />
-              <input type="file" accept="image/*" onChange={handleImage} />
+              </label>
+              <input
+                id="logo"
+                name="logo"
+                type="file"
+                accept="image/*"
+                onChange={handleImage}
+              />
             </div>
           </div>
          <div className="buttons">

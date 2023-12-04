@@ -62,7 +62,7 @@ const AdminNavbar = () => {
         <img src='/noavatar.png' alt="" />
         <span>{user.user.name}</span>
       </div>
-      <div onClick={() => setShowLog(!showLog)} className='logOutAdmin'>
+      {/* <div onClick={() => setShowLog(!showLog)} className='logOutAdmin'>
         <img src="/setting.svg"/>
              {showLog && <motion.div
               initial={{opacity:0, y:-10}}
@@ -70,7 +70,7 @@ const AdminNavbar = () => {
               transition={{duration:0.3}}
               exit={{y:-10, opacity:0}}
               onClick={handleLogout} className='logOutBtn'>Çıxış</motion.div>}
-      </div>
+      </div> */}
     </div>
   </div>
   )

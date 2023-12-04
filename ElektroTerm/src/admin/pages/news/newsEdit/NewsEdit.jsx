@@ -61,9 +61,13 @@ const NewsEdit = () => {
 
       const response = await api.post(`blogs/${id}`, formData);
 
-      if(response) return navigate(-1)
+      if(response){
+        toast.success("Redaktə olundu")
+        navigate(-1)
+      }
 
     } catch (error) {
+      toast.error("xeta bas verdi")
       console.log(error);
     }
   };
@@ -76,11 +80,13 @@ const NewsEdit = () => {
         <form onSubmit={handleUpload}>
           <div className="div">
             <label>Başlıq *</label>
-            <input
-              type="text"
+            <textarea
+              cols="30"
+              rows="2"
               value={title || ""}
               onChange={(e) => setTitle(e.target.value)}
-            />
+            ></textarea>
+            
           </div>
           <div className="div">
             <label>Məzmun *</label>

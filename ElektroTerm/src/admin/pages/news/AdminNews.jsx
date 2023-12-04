@@ -34,7 +34,7 @@ const AdminNews = () => {
     onSuccess: () => {
       queryClient.invalidateQueries(["news"])
       .then(
-        toast.success("silindi")
+        toast.success("Uğurla silindi")
       )
     }
   })
@@ -44,6 +44,21 @@ const AdminNews = () => {
     queryKey: ["news"],
     queryFn: () => api.get("blogs"),
   });
+
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+      const truncatedText = text.slice(0, maxLength);
+      const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+
+      if (lastSpaceIndex !== -1 && lastSpaceIndex < maxLength - 1) {
+        return truncatedText.slice(0, lastSpaceIndex) + "...";
+      } else {
+        return truncatedText + "...";
+      }
+    }
+  };
 
 
   return (
@@ -58,7 +73,7 @@ const AdminNews = () => {
           <thead>
             <tr>
               <th>Şəkil *</th>
-              <th>Başlıq *</th>
+              <th style={{width:"110px", padding:"12px"}}>Başlıq *</th>
               <th>Məzmun *</th>
               <th style={{width:"100px"}}>Parametrlər</th>
             </tr>
@@ -79,15 +94,15 @@ const AdminNews = () => {
             ) : (
               data.data?.map((item) => (
                 <tr key={item.id}>
-                  <td>
+                  <td style={{width:"110px", padding:"12px"}}>
                     <img
-                      style={{ width: "80px", height: "80px" }}
+                      style={{ width: "80px", height: "80px", objectFit:"cover" }}
                       src={item.image}
                       alt=""
                     />
                   </td>
-                  <td>{item.title}</td>
-                  <td>{item.content}</td>
+                  <td style={{width:"110px", padding:"12px"}}>{item.title}</td>
+                  <td>{truncateText(item.content, 300)}</td>
                   <td>
                     <button onClick={() => handleEdit(item.id)}>
                       <BiEditAlt />

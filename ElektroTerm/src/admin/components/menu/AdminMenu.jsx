@@ -46,7 +46,7 @@ const menu = [
       },
       {
         id: 4,
-        title: "Sosial",
+        title: "Sosial Şəbəkələr",
         url: "/admin/sosials",
         icon: "/post2.svg",
       },
