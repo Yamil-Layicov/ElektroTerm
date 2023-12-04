@@ -68,7 +68,8 @@ const AboutPage = () => {
                   <p key={index}>{item}</p>
               ))}
             </div>
-            <div className="doneBox">
+           <div className="doneBoxes">
+           <div className="doneBox">
               <span className="spanIcon">
                 <DoneOutlinedIcon />
               </span>
@@ -92,6 +93,7 @@ const AboutPage = () => {
               </span>
               <span>Mütəxəssislərdən ibarət komanda</span>
             </div>
+           </div>
           </motion.div>
         </div>
       </div>

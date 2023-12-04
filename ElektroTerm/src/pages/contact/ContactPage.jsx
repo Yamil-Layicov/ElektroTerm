@@ -1,12 +1,30 @@
-import Navbar from "../../components/navbar/Navbar";
 import "./contactPage.scss";
 import { motion } from "framer-motion";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaMailBulk } from "react-icons/fa";
-
+import { useEffect, useState } from "react";
+import api from '../../admin/api/posts.jsx';
 
 
 const ContactPage = () => {
+
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("settings");
+        setAboutData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
+
   return (
     <>
       <div className="contactPage">
@@ -33,7 +51,7 @@ const ContactPage = () => {
                 </span>
               </div>
               <div className="address">
-                <h1>About Krowd</h1>
+                {/* <h1>About Krowd</h1> */}
                 <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
               </div>
             </motion.div>
@@ -49,9 +67,10 @@ const ContactPage = () => {
                 </span>
               </div>
               <div className="address">
-                <h1>Address</h1>
-                <p>needhelp@krowd.com</p>
-                <p>666 888 0000</p>
+                {/* <h1>Address</h1> */}
+                <p>{aboutData?.email}</p>
+                <p>{aboutData?.phone_1}</p>
+                <p>{aboutData?.phone_2}</p>
               </div>
             </motion.div>
           </div>

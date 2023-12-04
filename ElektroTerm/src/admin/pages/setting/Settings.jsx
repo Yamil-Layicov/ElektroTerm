@@ -22,9 +22,9 @@ const Settings = () => {
 
         setContent1(response.data.address);
         setContent2(response.data.email);
-        setContent3(response.data.phone);
+        setContent3(response.data.phone_1);
         setContent6(response.data.rights);
-        setContent7(response.data.home_phone);
+        setContent7(response.data.phone_2);
 
         setImage(response.data.image);
       } catch (error) {
@@ -59,9 +59,9 @@ const Settings = () => {
       const formData = new FormData();
       formData.append("address", content1);
       formData.append("email", content2);
-      formData.append("phone", content3);
+      formData.append("phone_2", content3);
       formData.append("rights", content6);
-      formData.append("home_phone", content7);
+      formData.append("phone_1", content7);
       formData.append("image", image);
 
       const response = await api.post("settings", formData);
@@ -97,7 +97,7 @@ const Settings = () => {
           <div className="inputs">
             <label>Telefon(1) *</label>
             <input
-              type="number"
+              type="text"
               value={content3 || ""}
               onChange={(e) => setContent3(e.target.value)}
             />

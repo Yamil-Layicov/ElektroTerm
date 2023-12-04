@@ -4,9 +4,9 @@ import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import "./slider.scss";
 import api from "../../admin/api/posts";
+import TruncatedText from "../../helper/TruncatedText.jsx";
 
 const Slider = () => {
-
   const [aboutData, setAboutData] = useState([]);
 
   useEffect(() => {
@@ -28,11 +28,15 @@ const Slider = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    setCurrentPage((prevPage) => (prevPage === aboutData.length - 1 ? 0 : prevPage + 1));
+    setCurrentPage((prevPage) =>
+      prevPage === aboutData.length - 1 ? 0 : prevPage + 1
+    );
   };
 
   const handlePrevious = () => {
-    setCurrentPage((prevPage) => (prevPage === 0 ? aboutData.length - 1 : prevPage - 1))
+    setCurrentPage((prevPage) =>
+      prevPage === 0 ? aboutData.length - 1 : prevPage - 1
+    );
   };
 
   const moveToReservPage = () => {
@@ -41,12 +45,15 @@ const Slider = () => {
 
   const renderSliderContent = () => {
     const slideButtonDelay = 0.5;
-      
+
     return (
       <div className="sliderContent">
         <div className="firstBox">
           <div className="img">
-            <img src={aboutData[currentPage]?.image} alt={`Slide ${currentPage + 1}`} />
+            <img
+              src={aboutData[currentPage]?.image}
+              alt={`Slide ${currentPage + 1}`}
+            />
           </div>
           <div className="sliderText">
             <motion.h1
@@ -54,7 +61,9 @@ const Slider = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              {aboutData[currentPage]?.title}
+              {aboutData[currentPage]?.title && (
+                <TruncatedText text={aboutData[currentPage]?.title || ""} />
+              )}
             </motion.h1>
             <motion.button
               initial={{ opacity: 0, scale: 0 }}

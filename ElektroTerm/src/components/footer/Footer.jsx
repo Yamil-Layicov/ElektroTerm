@@ -1,6 +1,4 @@
 import "./footer.scss";
-import fb from "../../assets/socials/facebook_icon.svg";
-import insta from "../../assets/socials/instagram_icon.svg";
 import {BiLogoTelegram} from 'react-icons/bi'
 import { useEffect, useState } from "react";
 import api from '../../admin/api/posts';
@@ -9,12 +7,26 @@ import {useNavigate} from 'react-router-dom';
 const Footer = () => {
 
   const [navData, setNavData] = useState([])
+  const [socials, setSocials] = useState([])
 
   useEffect(() => {
     const fetchSettings = async () => {
       try {
         const response = await api.get("settings");
         setNavData(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("social");
+        setSocials(response.data)
       } catch (error) {
         console.error(error);
       }
@@ -61,8 +73,15 @@ const Footer = () => {
           Lorem quas utamur delicata qui, vix ei prima mentitum omnesque. Duo corrumpit cotidieque ne.
           </p>
           <div className="socials">
-            {/* <a href={navData.facebook} rel="noreferrer" target="_blank"><img src={fb}  alt="" /></a> 
-            <a href={navData?.instagram} rel="noreferrer" target="_blank" ><img src={insta}  alt="" /></a> */}
+            {
+              socials.map(social => 
+                 <>
+                    <a href={social?.url} target="_blank" rel="noreferrer">
+                    <img src={social?.logo} alt="" />
+                  </a>
+                 </>
+                )
+            }
           </div>
         </div>
         <div className="secondBox">
@@ -76,7 +95,8 @@ const Footer = () => {
         <div className="thirdBox">
           <h4>Əlaqə məlumatı</h4>
           <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
-          <p>{navData?.home_phone}</p>
+          <p>{navData?.phone_1}</p>
+          <p>{navData?.phone_2}</p>
           <p><a style={{color:"#A9B7D1", textDecoration:"none"}} href={`mailto:${navData?.email}`}>{navData?.email}</a></p>
         </div>
         <div className="subcriber">

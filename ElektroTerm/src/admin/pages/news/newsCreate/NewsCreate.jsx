@@ -38,7 +38,6 @@ const NewsCreate = () => {
       const formData = new FormData();
       formData.append("content", content);
       formData.append("title", title);
-
       formData.append("image", image);
 
       const response = await api.post(`blogs`, formData);

@@ -76,8 +76,8 @@ const menu = [
       // },
       {
         id: 4,
-        title: "Calendar",
-        url: "/admin",
+        title: "İcarə",
+        url: "/admin/rent",
         icon: "/calendar.svg",
       },
     ],

@@ -3,11 +3,14 @@ import "./about.scss";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
+import { useNavigate } from "react-router-dom";
 
 
 const About = () => {
 
   const [aboutData, setAboutData] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -21,6 +24,17 @@ const About = () => {
 
     fetchSettings();
   }, []);
+
+  const moveToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
+  const moveToReservPage = () => {
+    navigate("/haqqımızda");
+    moveToTop();
+  };
 
 
   return (
@@ -71,37 +85,31 @@ const About = () => {
               <span>
                 <MdDone />
               </span>
-              <span>Nsectetur cing elit.</span>
+              <span>Yüksək Keyfiyyətli Xidmətlər.</span>
             </div>
             <div className="doneBox">
               <span>
                 <MdDone />
               </span>
-              <span>Nsectetur cing elit.</span>
+              <span>Sürətli İş Prosesi.</span>
             </div>
             <div className="doneBox">
               <span>
                 <MdDone />
               </span>
-              <span>Nsectetur cing elit.</span>
+              <span>24/7 əlçatanlıq.</span>
             </div>
             <div className="doneBox">
               <span>
                 <MdDone />
               </span>
-              <span>Nsectetur cing elit.</span>
-            </div>
-            <div className="doneBox">
-              <span>
-                <MdDone />
-              </span>
-              <span>Nsectetur cing elit.</span>
+              <span>Mütəxəssislərdən ibarət komanda.</span>
             </div>
           </div>
           {/* <div className="experineceBox">
           </div> */}
         </div>
-        <button>daha ətraflı</button>
+        <button onClick={() => moveToReservPage()}>daha ətraflı</button>
       </motion.div>
     </div>
   );

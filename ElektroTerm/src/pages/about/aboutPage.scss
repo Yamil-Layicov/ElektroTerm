@@ -85,13 +85,19 @@
         width: 85%;
       }
 
-      .doneBox {
+      .doneBoxes {
+        padding-top: 20px;
         display: flex;
-        gap: 12px;
-        font-size: 15px;
-        font-weight: 500;
-        .spanIcon {
-          color: #10d0a1;
+        flex-direction: column;
+        gap: 15px;
+        .doneBox {
+          display: flex;
+          gap: 8px;
+          font-size: 15px;
+          font-weight: 500;
+          .spanIcon {
+            color: #10d0a1;
+          }
         }
       }
     }
@@ -227,7 +233,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        
+
         h1 {
           font-size: 30px;
           line-height: 1.2;

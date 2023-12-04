@@ -6,6 +6,7 @@ import PrivateRoute from './PrivateRoute';
 import AdminLayout from '../admin/adminLayout/AdminLayout';
 import AdminHome from '../admin/pages/home/AdminHome';
 import AdminAbout from '../admin/pages/about/AdminAbout';
+import AdminRent from '../admin/pages/rent/AdminRent';
 
 
 import AdminNewsLayout from '../admin/pages/news/adminNewsLayout/AdminNewsLayout';
@@ -88,6 +89,10 @@ const routes = [
         element: <PrivateRoute><AdminHome /></PrivateRoute>,
       },
       {
+        path: 'rent',
+        element: <PrivateRoute><AdminRent/></PrivateRoute>,
+      },
+      {
         path: 'profil',
         element: <PrivateRoute><Profil/></PrivateRoute>,
       },
@@ -153,6 +158,7 @@ const routes = [
           },
         ]
       },
+     
     ],
   },
 

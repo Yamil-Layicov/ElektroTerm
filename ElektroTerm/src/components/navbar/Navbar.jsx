@@ -157,7 +157,8 @@ const Navbar = () => {
               </div>
               <div className="textCall">
                 <div>Zəng Üçün</div>
-                <div>{navData?.home_phone}</div>
+                <div>{navData?.phone_1}</div>
+                <div>{navData?.phone_2}</div>
               </div>
             </div>
           </div>

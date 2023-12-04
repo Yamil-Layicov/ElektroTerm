@@ -6,7 +6,7 @@ const Context = createContext()
 
 export const AuthProvider = ({children}) => {
         
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || false)
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('userElektro')) || false)
 
     const data = {
         user,
@@ -14,7 +14,7 @@ export const AuthProvider = ({children}) => {
     }
 
     useEffect(() => {
-        localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('userElektro', JSON.stringify(user))
     },[user])
 
     return (
