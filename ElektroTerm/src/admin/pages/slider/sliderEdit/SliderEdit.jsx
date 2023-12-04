@@ -2,9 +2,11 @@ import "./sliderEdit.scss";
 import { useEffect, useState } from "react";
 import api from "../../../api/posts";
 import { useParams, useNavigate } from "react-router-dom";
+import { FiUploadCloud } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 
-const SliderEdit = () => {
+const NewsEdit = () => {
   const [title, setTitle] = useState([]);
 
   const [image, setImage] = useState(null);
@@ -56,9 +58,13 @@ const SliderEdit = () => {
 
       const response = await api.post(`sliders/${id}`, formData);
 
-      if(response) return navigate(-1)
+      if(response){
+        toast.success("Redaktə olundu")
+        navigate(-1)
+      }
 
     } catch (error) {
+      toast.error("Xəta bas verdi")
       console.log(error);
     }
   };
@@ -66,31 +72,45 @@ const SliderEdit = () => {
 
   return (
     <div className="sliderEdit">
-      <h4>Slider Redaktə et</h4>
+      <h4>Redaktə et</h4>
       <div className="intoSettings">
         <form onSubmit={handleUpload}>
-          <div>
-            <label>Başlıq *</label>
-            <input
-              type="text"
+          <div className="div">
+            <label>Məzmun  *</label>
+            <textarea
+              cols="30"
+              rows="2"
               value={title || ""}
               onChange={(e) => setTitle(e.target.value)}
-            />
+            ></textarea>
+            
           </div>
-        
-          <div className="imageFile">
-            <div className="inputBox">
-              <label>şəkil</label>
+          <div className="imageFile div">
+            <div className="logoBox">
+              <label htmlFor="logo">
+              <div className="logo"> 
+                <span><FiUploadCloud /> </span>
+                <span className="text">Şəkil</span>
+              </div>
               <img src={previousImage || image} alt="" />
-              <input type="file" accept="image/*"  onChange={handleImage} />
+              </label>
+              <input
+                id="logo"
+                name="logo"
+                type="file"
+                accept="image/*"
+                onChange={handleImage}
+              />
             </div>
           </div>
+          <div className="buttons">
           <button type="submit">Yadda saxla</button>
           <button type="submit" onClick={() => navigate("/admin/slider")}>Geri Qayıt</button>
+          </div>
         </form>
       </div>
     </div>
   );
 };
 
-export default SliderEdit;
+export default NewsEdit;

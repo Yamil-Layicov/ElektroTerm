@@ -4,8 +4,6 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import fb from "../../assets/socials/facebook_icon.svg";
-import insta from "../../assets/socials/instagram_icon.svg";
 import api from "../../admin/api/posts";
 import navImg from "./navImg.png";
 

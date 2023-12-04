@@ -58,7 +58,7 @@ const menu = [
     listItems: [
       {
         id: 1,
-        title: "Slider",
+        title: "Sliders",
         url: "/admin/slider",
         icon: "/element.svg",
       },

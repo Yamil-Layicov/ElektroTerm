@@ -27,6 +27,7 @@
 
     .notification {
       position: relative;
+      cursor: pointer;
 
       span {
         background-color: red;
@@ -45,6 +46,7 @@
     }
 
     .user {
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -56,7 +58,12 @@
         object-fit: cover;
       }
     }
+
+    .expandIcon{
+      cursor: pointer;
+    }
   }
+
   .logOutAdmin{
     position: relative;
     cursor: pointer;
