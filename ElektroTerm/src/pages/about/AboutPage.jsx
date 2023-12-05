@@ -1,10 +1,9 @@
 import "./aboutPage.scss";
 import { motion } from "framer-motion";
 import "./aboutPage.scss";
-import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
-
+import TruncatedText2 from "../../helper/TruncatedText2";
 
 const AboutPage = () => {
   const [aboutData, setAboutData] = useState([]);
@@ -63,38 +62,18 @@ const AboutPage = () => {
             className="textContainer"
           >
             <h1>{aboutData.title}</h1>
-            <p className="first">Nə üçün biz?</p>
             <div className="second">
               {aboutData?.content?.split("\r\n").map((item, index) => (
-                  <p key={index}>{item}</p>
+                <p key={index}>{item}</p>
               ))}
             </div>
-           <div className="doneBoxes">
-           <div className="doneBox">
-              <span className="spanIcon">
-                <DoneOutlinedIcon />
-              </span>
-              <span>Yüksək Keyfiyyətli Xidmətlər</span>
+            <div className="doneBoxes">
+              <div className="doneBox">
+                {aboutData?.category && (
+                  <TruncatedText2 text={aboutData?.category} />
+                )}
+              </div>
             </div>
-            <div className="doneBox">
-              <span className="spanIcon">
-                <DoneOutlinedIcon />
-              </span>
-              <span>Sürətli İş Prosesi</span>
-            </div>
-            <div className="doneBox">
-              <span className="spanIcon">
-                <DoneOutlinedIcon />
-              </span>
-              <span>24/7 əlçatanlıq</span>
-            </div>
-            <div className="doneBox">
-              <span className="spanIcon">
-                <DoneOutlinedIcon />
-              </span>
-              <span>Mütəxəssislərdən ibarət komanda</span>
-            </div>
-           </div>
           </motion.div>
         </div>
       </div>

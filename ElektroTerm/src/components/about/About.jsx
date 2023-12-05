@@ -1,9 +1,9 @@
-import { MdDone } from "react-icons/md";
 import "./about.scss";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
 import { useNavigate } from "react-router-dom";
+import TruncatedText2 from "../../helper/TruncatedText2";
 
 
 const About = () => {
@@ -17,6 +17,7 @@ const About = () => {
       try {
         const response = await api.get("about");
         setAboutData(response.data);
+        console.log(response?.data?.category);
       } catch (error) {
         console.error(error);
       }
@@ -82,32 +83,11 @@ const About = () => {
         <div className="bigBox">
           <div className="doneBoxes">
             <div className="doneBox">
-              <span>
-                <MdDone />
-              </span>
-              <span>Yüksək Keyfiyyətli Xidmətlər.</span>
-            </div>
-            <div className="doneBox">
-              <span>
-                <MdDone />
-              </span>
-              <span>Sürətli İş Prosesi.</span>
-            </div>
-            <div className="doneBox">
-              <span>
-                <MdDone />
-              </span>
-              <span>24/7 əlçatanlıq.</span>
-            </div>
-            <div className="doneBox">
-              <span>
-                <MdDone />
-              </span>
-              <span>Mütəxəssislərdən ibarət komanda.</span>
+             {
+              aboutData?.category &&  <TruncatedText2 text={aboutData?.category}/>
+             }
             </div>
           </div>
-          {/* <div className="experineceBox">
-          </div> */}
         </div>
         <button onClick={() => moveToReservPage()}>daha ətraflı</button>
       </motion.div>

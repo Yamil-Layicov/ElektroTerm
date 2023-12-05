@@ -1,7 +1,6 @@
+import { MdDone } from "react-icons/md";
 
-
-
-const TruncatedText = ({ text, maxLength }) => {
+const TruncatedText2 = ({ text, maxLength }) => {
   const length = maxLength ? maxLength : text.length;
   let truncatedText = "";
   if (text?.length >= maxLength) {
@@ -19,12 +18,17 @@ const TruncatedText = ({ text, maxLength }) => {
   const textLines = truncatedText.split(/\n/);
 
   return (
-    <div style={{display:"flex", flexDirection:"column", gap:"2px"}}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
       {textLines.map((line, index) => (
-        <span key={index}>{line}</span>
+        <span key={index} style={{display:"flex", alignItems:"center", gap:"15px"}}>
+          <span>
+            <MdDone style={{color:"#29F0B4"}}/>
+          </span>
+          <span>{line}</span>
+        </span>
       ))}
     </div>
   );
 };
 
-export default TruncatedText;
+export default TruncatedText2;

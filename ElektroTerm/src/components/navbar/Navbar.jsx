@@ -154,8 +154,8 @@ const Navbar = () => {
               </div>
               <div className="textCall">
                 <div>Zəng Üçün</div>
-                <div>{navData?.phone_1}</div>
-                <div>{navData?.phone_2}</div>
+                <p>{navData?.phone_1}</p>
+                <p>{navData?.phone_2}</p>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ const Navbar = () => {
           <div className="mobileLeft">
             <div className="logo" style={{ height: "40px" }}>
               <img
-                style={{ borderRadius:"20%", width:"50px", height:"50px" }}
+                style={{ borderRadius:"20%", objectFit:"cover", width:"50px", height:"50px" }}
                 src={navData?.image}
                 alt=""
               />

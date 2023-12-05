@@ -12,7 +12,7 @@ const Home = () => {
   });
 
   return isLoading ? (
-    <div style={{height:"100vh", width:"100%", display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"black", position:"fixed", zIndex:"999"}}><ThreeCircles
+    <div style={{height:"100vh", width:"100%", display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"#092635", position:"fixed", zIndex:"999"}}><ThreeCircles
     height="100"
     width="100"
     color="#4fa94d"

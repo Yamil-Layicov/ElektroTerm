@@ -104,8 +104,11 @@ nav {
       gap: 20px;
 
       .textCall {
-        div {
-          padding: 2px 0;
+        div{
+          padding-bottom: 4px;
+        }
+        p{
+          font-size: 15px;
         }
       }
     }

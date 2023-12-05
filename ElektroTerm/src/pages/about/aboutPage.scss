@@ -1,5 +1,6 @@
 .aboutPage {
   padding-top: 110px;
+  font-family: 'Poppins', sans-serif;
 
   .imgBanner {
     background-image: url("./contactBack.jpg");
@@ -82,24 +83,35 @@
       }
 
       .second {
-        width: 85%;
+        font-size: 20px;
+      color: #838694;
+      padding: 10px 0;
+      letter-spacing: 1px;
+      line-height: 32px;
       }
 
-      .doneBoxes {
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        .doneBox {
+        .doneBoxes {
           display: flex;
-          gap: 8px;
-          font-size: 15px;
-          font-weight: 500;
-          .spanIcon {
-            color: #10d0a1;
+          flex-direction: column;
+          gap: 13px;
+  
+          .doneBox{
+              display: flex;
+              gap: 7px;
+              
+            span {
+              &:first-child {
+                color: #674df0;
+                font-size: 27px;
+              }
+              &:last-child {
+                  color: #8386A2;
+                  font-size: 19px;
+                }
+            }
           }
         }
-      }
+      
     }
   }
 }

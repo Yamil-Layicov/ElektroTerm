@@ -6,6 +6,7 @@ import { FiUploadCloud } from "react-icons/fi";
 const AdminAbout = () => {
   const [title, setTitle] = useState([]);
   const [content, setContent] = useState([]);
+  const [category, setCategory] = useState([]);
 
   const [image_1, setImage_1] = useState(null);
   const [previousImage_1, setPreviousImage_1] = useState(null);
@@ -22,6 +23,7 @@ const AdminAbout = () => {
 
         setContent(response.data.content);
         setTitle(response.data.title);
+        setCategory(response.data.category);
 
         setImage_1(response.data.image_1);
         setImage_2(response.data.image_2);
@@ -92,6 +94,7 @@ const AdminAbout = () => {
       const formData = new FormData();
       formData.append("content", content);
       formData.append("title", title);
+      formData.append("category", category);
 
       formData.append("image_1", image_1);
       formData.append("image_2", image_2);
@@ -130,6 +133,16 @@ const AdminAbout = () => {
               rows="7"
               value={content || ""}
               onChange={(e) => setContent(e.target.value)}
+            ></textarea>
+          </div>
+
+          <div className="div">
+            <label>Kateqoriyalar *</label>
+            <textarea
+              cols="30"
+              rows="7"
+              value={category || ""}
+              onChange={(e) => setCategory(e.target.value)}
             ></textarea>
           </div>
 
