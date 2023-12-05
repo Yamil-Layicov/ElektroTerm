@@ -146,9 +146,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        {/* <div className="instaIcon">
-          <span><InstagramIcon /></span>
-        </div> */}
         <div className="mainRight">
           <div className="right">
             <div className="helpdesk">
@@ -207,7 +204,6 @@ const Navbar = () => {
                 </span>
                 <span>
                   Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22
-                  {/* {navData?.address} */}
                 </span>
               </p>
               <p>
@@ -217,7 +213,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>{navData?.home_phone}</span>
+                <span>{navData?.phone_1}</span>
               </p>
               <p>
                 <span>
@@ -226,7 +222,7 @@ const Navbar = () => {
                     fontSize="small"
                   />
                 </span>
-                <span>{navData?.phone}</span>
+                <span>{navData?.phone_2}</span>
               </p>
               <p>
                 <span>

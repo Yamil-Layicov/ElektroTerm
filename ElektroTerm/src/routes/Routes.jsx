@@ -33,6 +33,7 @@ import NewsLayout from '../pages/news/newsLayout/NewsLayout';
 import NewsDetail from '../pages/news/newsDetail/NewsDetail';
 import Settings from '../admin/pages/setting/Settings';
 import Profil from '../admin/pages/profil/Profil';
+import ChangePassword from '../admin/pages/changePassword/ChangePassword';
 
 
 const routes = [
@@ -95,6 +96,10 @@ const routes = [
       {
         path: 'profil',
         element: <PrivateRoute><Profil/></PrivateRoute>,
+      },
+      {
+        path: 'edit-password',
+        element: <PrivateRoute><ChangePassword/></PrivateRoute>,
       },
       {
         path: 'about',

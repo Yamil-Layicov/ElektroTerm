@@ -89,7 +89,7 @@ const menu = [
       {
         id: 1,
         title: "Settings",
-        url: "/admin",
+        url: "/admin/edit-password",
         icon: "/setting.svg",
       },
       // {

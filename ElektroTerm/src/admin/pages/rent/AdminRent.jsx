@@ -1,39 +1,34 @@
 import "./adminRent.scss";
 import api from "../../api/posts";
-import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ProgressBar } from "react-loader-spinner";
 import { toast } from "react-toastify";
 
-
 const AdminRent = () => {
-
-
   const handleDelete = (id) => {
-    mutation.mutate(id)
+    mutation.mutate(id);
   };
-
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn:(id) => {
-      return api.delete(`blogs/${id}`)
+    mutationFn: (id) => {
+      return api.delete(`rent/${id}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["news"])
-      .then(
-        toast.success("Uğurla silindi")
-      )
-    }
-  })
-
+      queryClient
+        .invalidateQueries(["rent"])
+        .then(toast.success("Uğurla silindi"));
+    },
+  });
 
   const { isLoading, data } = useQuery({
-    queryKey: ["news"],
-    queryFn: () => api.get("blogs"),
+    queryKey: ["rent"],
+    queryFn: () => api.get("rent"),
   });
+
+  console.log(data?.data);
 
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
@@ -50,7 +45,6 @@ const AdminRent = () => {
     }
   };
 
-
   return (
     <div className="adminRent">
       <h4>İcarə müraciətləri</h4>
@@ -61,14 +55,14 @@ const AdminRent = () => {
             <tr>
               <th>Ad *</th>
               <th>Soyad *</th>
-              <th style={{width:"110px", padding:"12px"}}>E-poçt *</th>
+              <th style={{ width: "110px", padding: "12px" }}>E-poçt *</th>
               <th>Mobil nömrə *</th>
               <th>Qeyd *</th>
-              <th style={{width:"100px"}}>Parametrlər</th>
+              <th style={{ width: "100px" }}>Parametrlər</th>
             </tr>
           </thead>
           <tbody>
-            { isLoading ? (
+            {isLoading ? (
               <div className="progressBar">
                 <ProgressBar
                   height="80"
@@ -82,14 +76,14 @@ const AdminRent = () => {
               </div>
             ) : (
               data.data?.map((item) => (
-                <tr key={item.id}>
-                  <td >{item.title}</td>
-                  <td>{truncateText(item.content, 300)}</td>
-                  <td >{item.title}</td>
-                  <td>{truncateText(item.content, 300)}</td>
-                  <td >{item.title}</td>
-                  <td style={{margin:'auto', padding:"0 40px"}}>
-                    <button  onClick={() => handleDelete(item.id)}>
+                <tr key={item?.id}>
+                  <td>{item?.name}</td>
+                  <td>{truncateText(item?.surname, 300)}</td>
+                  <td>{item?.email}</td>
+                  <td>{truncateText(item?.phone, 300)}</td>
+                  <td>{item?.note}</td>
+                  <td style={{ margin: "auto", padding: "0 40px" }}>
+                    <button onClick={() => handleDelete(item?.id)}>
                       <RiDeleteBin5Line />
                     </button>
                   </td>
