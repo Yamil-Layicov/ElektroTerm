@@ -5,6 +5,7 @@ import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
 
+
 const AboutPage = () => {
   const [aboutData, setAboutData] = useState([]);
 
