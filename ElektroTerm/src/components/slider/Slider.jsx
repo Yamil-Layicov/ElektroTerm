@@ -1,27 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import "./slider.scss";
-import api from "../../admin/api/posts";
 import TruncatedText from "../../helper/TruncatedText.jsx";
 
-const Slider = () => {
-  const [aboutData, setAboutData] = useState([]);
-
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const response = await api.get("sliders");
-        setAboutData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchSettings();
-  }, []);
+const Slider = ({data}) => {
 
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -29,13 +13,13 @@ const Slider = () => {
 
   const handleNext = () => {
     setCurrentPage((prevPage) =>
-      prevPage === aboutData.length - 1 ? 0 : prevPage + 1
+      prevPage === data?.length - 1 ? 0 : prevPage + 1
     );
   };
 
   const handlePrevious = () => {
     setCurrentPage((prevPage) =>
-      prevPage === 0 ? aboutData.length - 1 : prevPage - 1
+      prevPage === 0 ? data?.length - 1 : prevPage - 1
     );
   };
 
@@ -51,7 +35,7 @@ const Slider = () => {
         <div className="firstBox">
           <div className="img">
             <img
-              src={aboutData[currentPage]?.image}
+              src={data[currentPage]?.image}
               alt={`Slide ${currentPage + 1}`}
             />
           </div>
@@ -61,8 +45,8 @@ const Slider = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              {aboutData[currentPage]?.title && (
-                <TruncatedText text={aboutData[currentPage]?.title || ""} />
+              {data[currentPage]?.title && (
+                <TruncatedText text={data[currentPage]?.title || ""} />
               )}
             </motion.h1>
             <motion.button
@@ -80,17 +64,19 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider">
-      {renderSliderContent()}
-      <div className="moveBtns">
-        <div className="leftBtn" onClick={handlePrevious}>
-          <GoArrowLeft />
+    <>
+        <div className="slider">
+          {renderSliderContent()}
+          <div className="moveBtns">
+            <div className="leftBtn" onClick={handlePrevious}>
+              <GoArrowLeft />
+            </div>
+            <div className="rightBtn" onClick={handleNext}>
+              <GoArrowRight />
+            </div>
+          </div>
         </div>
-        <div className="rightBtn" onClick={handleNext}>
-          <GoArrowRight />
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

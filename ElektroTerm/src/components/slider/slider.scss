@@ -1,5 +1,15 @@
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&display=swap');
 
+.spinnerSlider{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .slider{
     position: relative;

@@ -1,19 +1,20 @@
-import Navbar from "../../components/navbar/Navbar";
 import "./icarePage.scss";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import { basicSchema } from "./shemas";
 import { toast } from "react-toastify";
+import api from "../../admin/api/posts";
 
 const onSubmit = async (values, actions) => {
-  console.log(actions);
-  console.log(values);
   await new Promise((resolve) => {
     setTimeout(resolve, 1000);
   });
-  toast.success('Mesaj göndərildi');
+  const response = await api.post("rent", values);
+  if(response) return toast.success('Mesaj göndərildi');
   actions.resetForm();
 };
+
+
 
 const IcarePage = () => {
   const {
@@ -30,12 +31,12 @@ const IcarePage = () => {
       phone: "",
       name: "",
       surName: "",
+      note:""
     },
     validationSchema: basicSchema,
     onSubmit,
   });
 
-  // console.log(errors);
 
   return (
     <>
@@ -118,10 +119,11 @@ const IcarePage = () => {
               </div>
             </div>
             <textarea
-              name=""
-              id=""
+              value={values.note}
+              onChange={handleChange}
               cols="30"
               rows="8"
+              name="note"
               placeholder="qeyd"
             ></textarea>
             <div>
