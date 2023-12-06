@@ -3,12 +3,6 @@
   font-family: 'Poppins', sans-serif;
 
   .imgBanner {
-    background-image: url("./contactBack.jpg");
-    height: 360px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     display: flex;
     align-items: center;
     color: white;
@@ -60,7 +54,7 @@
         .address{
           display: flex;
           flex-direction: column;
-          gap: 15px;
+          gap: 5px;
 
           p{
             font-size: 20px;

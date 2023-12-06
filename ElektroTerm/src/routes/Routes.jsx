@@ -32,6 +32,7 @@ import NewsPage from '../pages/news/NewsPage';
 import NewsLayout from '../pages/news/newsLayout/NewsLayout';
 import NewsDetail from '../pages/news/newsDetail/NewsDetail';
 import Settings from '../admin/pages/setting/Settings';
+import Banners from '../admin/pages/banners/Banners';
 import Profil from '../admin/pages/profil/Profil';
 import ChangePassword from '../admin/pages/changePassword/ChangePassword';
 
@@ -103,11 +104,15 @@ const routes = [
       },
       {
         path: 'about',
-        element: <PrivateRoute><AdminAbout /></PrivateRoute>,
+        element: <PrivateRoute><AdminAbout/></PrivateRoute>,
       },
       {
         path: 'tənzimləmələr',
-        element: <PrivateRoute><Settings  /></PrivateRoute>,
+        element: <PrivateRoute><Settings/></PrivateRoute>,
+      },
+      {
+        path: 'banners',
+        element: <PrivateRoute><Banners/></PrivateRoute>,
       },
       {
         path: 'xəbərlər',

@@ -1,14 +1,11 @@
-.adminSettings{
+.bannersSettings{
     padding-left:  20px;
-
-    h4{
-        font-size: 28px;
-        font-family: 'Poppins', sans-serif;
-    }
     .intoSettings{
-        width: 80%;
-        border-radius: 3px;
         margin: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
 
         form{
             border-radius: 5px;
@@ -49,8 +46,8 @@
                         }
                     }
                     img{
-                        width: 100px;
-                        height: 100px;
+                        width: 300px;
+                        height: 200px;
                         border-radius: 5px;
                         object-fit: cover;
                     }
@@ -65,8 +62,8 @@
                 border: none;
                 border-radius: 3px;
                 padding: 12px;
-                font-size: 18px;
-                width: 180px;
+                font-size: 15px;
+                width: 140px;
                 transition: all .3s ease-in-out;
                 border: 2px solid #2A3447;
 

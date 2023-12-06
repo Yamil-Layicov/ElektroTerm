@@ -28,7 +28,7 @@ const menu = [
     listItems: [
       {
         id: 1,
-        title: "Haqqimizda",
+        title: "Haqqımızda",
         url: "/admin/about",
         icon: "/form.svg",
       },
@@ -87,17 +87,17 @@ const menu = [
     title: "Maintenance",
     listItems: [
       {
+        id: 2,
+        title: "Banners",
+        url: "/admin/banners",
+        icon: "/backup.svg",
+      },
+      {
         id: 1,
         title: "Settings",
         url: "/admin/edit-password",
         icon: "/setting.svg",
       },
-      // {
-      //   id: 2,
-      //   title: "Backups",
-      //   url: "/admin",
-      //   icon: "/backup.svg",
-      // },
     ],
   },
   {

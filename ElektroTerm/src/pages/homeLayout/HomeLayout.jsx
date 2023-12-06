@@ -4,11 +4,11 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const HomeLayout = () => {
   return (
-    <>
+    <main style={{maxWidth:"1700px", margin:"auto"}}>
       <Navbar/>
       <Outlet />
       <Footer />  
-    </>
+    </main>
   );
 };
 

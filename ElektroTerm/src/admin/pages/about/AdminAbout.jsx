@@ -19,7 +19,6 @@ const AdminAbout = () => {
     const fetchSettings = async () => {
       try {
         const response = await api.get("about");
-        console.log(response.data);
 
         setContent(response.data.content);
         setTitle(response.data.title);
@@ -35,6 +34,21 @@ const AdminAbout = () => {
 
     fetchSettings();
   }, []);
+
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await api.get("banners/about");
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+  
 
   const handleImage_1 = (e) => {
     const file = e.target.files[0];

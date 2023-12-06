@@ -89,7 +89,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <>
+    <div className="navComponent">
       <nav className={`${navbar && "navActive"}`} style={{backgroundColor:navbar ? " " : pathname === "/" ? "transparent" : "#1C1F2E"}}>
         <div className="left">
           <div className="leftLogo">
@@ -110,7 +110,7 @@ const Navbar = () => {
                 to="/"
                 className="link"
               >
-                Ana səhifə
+                ANA SƏHİFƏ
               </NavLink>
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
@@ -118,7 +118,7 @@ const Navbar = () => {
                 to="/haqqımızda"
                 className="link"
               >
-                Haqqımızda
+                HAQQIMIZDA
               </NavLink>
               <NavLink
                 style={({ isActive }) => ({ color: isActive ? "#10D0A1" : "" })}
@@ -142,7 +142,7 @@ const Navbar = () => {
                 to="/əlaqə"
                 className="link"
               >
-                Əlaqə
+                ƏLAQƏ
               </NavLink>
             </div>
           </div>
@@ -261,7 +261,7 @@ const Navbar = () => {
 
         {isOpenNavbar && <div className="backBlack"></div>}
       </nav>
-    </>
+    </div>
   );
 };
 

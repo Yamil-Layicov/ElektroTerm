@@ -4,6 +4,8 @@ import { FaMapLocationDot } from "react-icons/fa6";
 import { FaMailBulk } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import api from '../../admin/api/posts.jsx';
+import { useQuery } from "@tanstack/react-query";
+import { ThreeCircles } from "react-loader-spinner";
 
 
 const ContactPage = () => {
@@ -24,11 +26,48 @@ const ContactPage = () => {
     fetchSettings();
   }, []);
 
+  const { isLoading, data } = useQuery({
+    queryKey: ["banner"],
+    queryFn: () => api.get("banners/contact"),
+  });
+  
 
   return (
     <>
-      <div className="contactPage">
-        <div className="imgBanner">
+      {
+        isLoading ? <div
+        style={{
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#092635",
+          position: "fixed",
+          zIndex: "999",
+        }}
+      >
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div> : <div className="contactPage">
+        <div className="imgBanner"  style={{
+              backgroundImage: `url(${data?.data?.image})`,
+              width: "100%",
+              height: "360px",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}>
           <motion.h1
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
@@ -77,6 +116,7 @@ const ContactPage = () => {
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12149.849936129462!2d49.8786396!3d40.420757!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089a3b0fde691%3A0x38ac3991190cca0!2sAgro%20Bitki%20Klinikas%C4%B1%20-%20Fitolab!5e0!3m2!1str!2saz!4v1698134293423!5m2!1str!2saz"></iframe>
       </div>
+      }
     </>
   );
 };

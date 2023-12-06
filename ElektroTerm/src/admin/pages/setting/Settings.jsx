@@ -10,6 +10,8 @@ const Settings = () => {
   const [content3, setContent3] = useState([]);
   const [content6, setContent6] = useState([]);
   const [content7, setContent7] = useState([]);
+  const [footertText, setFooterText] = useState("");
+
 
   const [image, setImage] = useState(null);
   const [previousImage, setPreviousImage] = useState(null);
@@ -25,7 +27,9 @@ const Settings = () => {
         setContent3(response.data.phone_1);
         setContent6(response.data.rights);
         setContent7(response.data.phone_2);
+        setFooterText(response.data.footer_text);
 
+        
         setImage(response.data.image);
       } catch (error) {
         console.error(error);
@@ -62,8 +66,9 @@ const Settings = () => {
       formData.append("phone_2", content3);
       formData.append("rights", content6);
       formData.append("phone_1", content7);
+      formData.append("footer_text", footertText);
       formData.append("image", image);
-
+      
       const response = await api.post("settings", formData);
 
       if (response)
@@ -109,6 +114,15 @@ const Settings = () => {
               value={content7 || ""}
               onChange={(e) => setContent7(e.target.value)}
             />
+          </div>
+          <div className="inputs">
+            <label>Footer text *</label>
+            <textarea
+              cols="30"
+              rows="5"
+              value={footertText || ""}
+              onChange={(e) => setFooterText(e.target.value)}
+            ></textarea>
           </div>
           <div className="inputs">
             <label>Hüquqlar *</label>

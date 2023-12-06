@@ -101,7 +101,7 @@ const AdminNews = () => {
                       alt=""
                     />
                   </td>
-                  <td style={{width:"110px", padding:"12px"}}>{item.title}</td>
+                  <td style={{width:"150px", padding:"12px"}}>{item.title}</td>
                   <td>{truncateText(item.content, 300)}</td>
                   <td>
                     <button onClick={() => handleEdit(item.id)}>

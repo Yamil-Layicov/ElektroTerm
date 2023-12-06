@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../../admin/api/posts";
 import { useEffect, useState } from "react";
 import { convertDate } from "../../helper/DateFns";
+import { useQuery } from "@tanstack/react-query";
+import { ThreeCircles } from "react-loader-spinner";
 
 const NewsPage = () => {
   const [newsData, setNewsData] = useState([]);
@@ -31,6 +33,10 @@ const NewsPage = () => {
     fetchSettings();
   }, []);
 
+  const { isLoading, data } = useQuery({
+    queryFn: () => api.get("banners/news"),
+  });
+
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
       return text;
@@ -48,35 +54,73 @@ const NewsPage = () => {
 
   return (
     <>
-      <div className="newsPage">
-        <div className="imgBanner">
-          <motion.h1
-            initial={{ opacity: 0, x: -150 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+      {isLoading ? (
+        <div
+        style={{
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#092635",
+          position: "fixed",
+          zIndex: "999",
+        }}
+      >
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div>
+      ) : (
+        <div className="newsPage">
+          <div
+            className="imgBanner"
+            style={{
+              backgroundImage: `url(${data?.data?.image})`,
+              width: "100%",
+              height: "360px",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           >
-            Xəbərlər
-          </motion.h1>
-        </div>
-        <div className="newsBoxes">
-          <div className="boxes">
-            {newsData.map((box) => (
-              <div key={box.id} className="box">
-                <div className="imgBox">
-                  <img src={box.image} alt="" />
+            <motion.h1
+              initial={{ opacity: 0, x: -150 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+              Xəbərlər
+            </motion.h1>
+          </div>
+          <div className="newsBoxes">
+            <div className="boxes">
+              {newsData.map((box) => (
+                <div key={box.id} className="box">
+                  <div className="imgBox">
+                    <img src={box.image} alt="" />
+                  </div>
+                  <div className="textBox">
+                    <p className="date">{convertDate(box?.created_at)}</p>
+                    <p className="title">{truncateText(box?.title, 110)}</p>
+                    <button onClick={() => handleId(box.id)}>
+                      <GoArrowRight />
+                    </button>
+                  </div>
                 </div>
-                <div className="textBox">
-                  <p className="date">{convertDate(box?.created_at)}</p>
-                  <p className="title">{truncateText(box?.title, 110)}</p>
-                  <button onClick={() => handleId(box.id)}>
-                    <GoArrowRight />
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

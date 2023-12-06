@@ -3,12 +3,6 @@
   font-family: 'Poppins', sans-serif;
 
   .imgBanner {
-    background-image: url("./contactBack.jpg");
-    height: 360px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     display: flex;
     align-items: center;
     color: white;
@@ -60,6 +54,7 @@
             padding: 8px 0;
             color: white;
             font-size: 13px;
+            font-family: 'Poppins', sans-serif;
           }
           .title{
             font-size: 20px;

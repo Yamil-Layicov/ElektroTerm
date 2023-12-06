@@ -3,6 +3,7 @@ import { BiLogoTelegram } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
 import { useNavigate } from "react-router-dom";
+import TruncatedText from '../../helper/TruncatedText';
 
 const Footer = () => {
   const [navData, setNavData] = useState([]);
@@ -67,8 +68,7 @@ const Footer = () => {
       <div className="boxes">
         <div className="firstBox">
           <p>
-            Lorem quas utamur delicata qui, vix ei prima mentitum omnesque. Duo
-            corrumpit cotidieque ne.
+            {navData?.footer_text && <TruncatedText text={navData?.footer_text}/>}
           </p>
           <div className="socials">
             {socials.map((social, index) => (
