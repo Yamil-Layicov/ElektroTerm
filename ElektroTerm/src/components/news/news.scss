@@ -186,5 +186,23 @@
   }
 }
 
+@media (max-width: 600px) {
+  .news {
+    margin-bottom: 50px;
+    .motionCarousel{
+      width: 100%;
+      .carousel {
+
+        .inner-carousel{
+        }
+      }
+      .item {
+        min-width: calc(100% / 1) !important;
+        padding: 15px;
+      }
+    }
+  }
+}
+
 
 

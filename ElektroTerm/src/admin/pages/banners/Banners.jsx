@@ -187,7 +187,7 @@ const Banners = () => {
                 onChange={handleImage1}
               />
             </div>
-            <button type="submit">Redaktə et</button>
+            <button type="submit">Yadda saxla</button>
           </div>
         </form>
         <form onSubmit={handleUpload2}>
@@ -208,7 +208,7 @@ const Banners = () => {
                 onChange={handleImage2}
               />
             </div>
-            <button type="submit">Redaktə et</button>
+            <button type="submit">Yadda saxla</button>
           </div>
         </form>
         <form onSubmit={handleUpload3}>
@@ -229,7 +229,7 @@ const Banners = () => {
                 onChange={handleImage3}
               />
             </div>
-            <button type="submit">Redaktə et</button>
+            <button type="submit">Yadda saxla</button>
           </div>
         </form>
         <form onSubmit={handleUpload4}>
@@ -250,7 +250,7 @@ const Banners = () => {
                 onChange={handleImage4}
               />
             </div>
-            <button type="submit">Redaktə et</button>
+            <button type="submit">Yadda saxla</button>
           </div>
         </form>
       </div>

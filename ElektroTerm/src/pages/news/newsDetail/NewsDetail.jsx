@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { convertDate } from "../../../helper/DateFns";
 import TruncatedText from '../../../helper/TruncatedText';
+import { useQuery } from "@tanstack/react-query";
+import { ThreeCircles } from "react-loader-spinner";
+
 
 
 const NewsDetail = () => {
@@ -24,11 +27,47 @@ const NewsDetail = () => {
     fetchSettings();
   }, []);
 
+  const { isLoading, data } = useQuery({
+    queryFn: () => api.get("banners/news"),
+  });
+
 
   return (
     <>
-      <div className="newsPageDetail">
-        <div className="imgBanner">
+      {
+        isLoading ? <div
+        style={{
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#092635",
+          position: "fixed",
+          zIndex: "999",
+        }}
+      >
+        <ThreeCircles
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </div> : <div className="newsPageDetail">
+        <div className="imgBanner" style={{
+              backgroundImage: `url(${data?.data?.image})`,
+              width: "100%",
+              height: "360px",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}>
           <motion.h1
             initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
@@ -57,6 +96,7 @@ const NewsDetail = () => {
           </div>
         </div>
       </div>
+      }
     </>
   );
 };
