@@ -4,6 +4,7 @@ import api from "../../../admin/api/posts";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { convertDate } from "../../../helper/DateFns";
+import TruncatedText from '../../../helper/TruncatedText';
 
 
 const NewsDetail = () => {
@@ -49,7 +50,9 @@ const NewsDetail = () => {
               {newsData?.title}
             </p>
             <p className="content">
-              {newsData?.content}
+              {
+                newsData?.content && <TruncatedText text = {newsData?.content}/>
+              }
             </p>
           </div>
         </div>

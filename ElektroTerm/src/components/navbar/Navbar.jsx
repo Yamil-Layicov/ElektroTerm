@@ -95,6 +95,7 @@ const Navbar = () => {
           <div className="leftLogo">
             <div className="logo">
               <img
+              onClick={navigate1}
                 src={navData?.image}
                 alt=""
                 style={{borderRadius:"20%", width:"70px", height:"70px"}}

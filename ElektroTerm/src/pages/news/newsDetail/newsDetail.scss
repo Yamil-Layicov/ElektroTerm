@@ -1,5 +1,6 @@
 .newsPageDetail {
   padding-top: 110px;
+  font-family: 'Raleway', sans-serif;
   .imgBanner {
     background-image: url("../contactBack.jpg");
     height: 360px;
@@ -15,6 +16,7 @@
 
     h1 {
       font-size: 48px;
+      font-family: 'Poppins', sans-serif;
     }
 
     &::after {

@@ -1,7 +1,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Days+One&family=Poppins:wght@100;200;300;400;500;600;700;900&family=Raleway:wght@500;600;700;800&display=swap');
 
 .spinnerSlider{
-    font-family: 'Poppins', sans-serif;
+    
     position: fixed;
     width: 100%;
     height: 100%;
@@ -16,7 +17,7 @@
     position: relative;
     &::after{
         content: '';
-        background-color: rgba(0, 0, 0, 0.212);
+        background-color: rgba(0, 0, 0, 0.345);
         top: 0;
         left: 0;
         width: 100%;
@@ -48,10 +49,12 @@
             
             h1{
                 text-transform: uppercase;
-                font-size: 53px;
+                font-size: 45px;
+                font-family: 'Raleway', sans-serif;
             }
     
             button{
+                font-family: 'Poppins', sans-serif;
                 border: none;
                 padding: 26px 62px;
                 color: black;
