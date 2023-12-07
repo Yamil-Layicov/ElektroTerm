@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const HomeLayout = () => {
   return (
-    <main style={{maxWidth:"1700px", margin:"auto"}}>
+    <main style={{maxWidth:"2100px", margin:"auto"}}>
       <Navbar/>
       <Outlet />
       <Footer />  

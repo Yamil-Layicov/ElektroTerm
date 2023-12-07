@@ -81,3 +81,6 @@ const Slider = ({data}) => {
 };
 
 export default Slider;
+
+
+

@@ -94,6 +94,12 @@ const NewsDetail = () => {
               }
             </p>
           </div>
+          <div className="categories">
+            <h2>Kateqoriyalar</h2>
+            {[1,2,3,4,5].map((box, index) => 
+             <p key={index}>Businnes</p>
+              )}
+          </div>
         </div>
       </div>
       }

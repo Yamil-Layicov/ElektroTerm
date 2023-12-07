@@ -135,8 +135,18 @@
     .newsBoxes{
       .boxes{
         .box{
-          button{
-            left: 20px !important;
+          
+          .textBox {
+            padding: 40px 20px 0px 20px;
+            .date {
+              
+            }
+            .title{
+              font-size: 18px;
+            }
+            button{
+              left: 20px !important;
+            }
           }
         }
       }
