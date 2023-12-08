@@ -12,7 +12,7 @@ const CategoryEdit = ({ setShowModalEdit, categoryId }) => {
       const res = await api.post(`categories/${categoryId}`, { name });
 
       if (res.status >= 200 && res.status < 300) {
-        toast.success("Elave olundu");
+        toast.success("Redaktə   olundu");
         setShowModalEdit(false);
         setTimeout(() => {
           window.location.reload()
@@ -43,7 +43,7 @@ const CategoryEdit = ({ setShowModalEdit, categoryId }) => {
     <div className="modal">
       <div className="modalInto">
         <form onSubmit={handleSubmit}>
-          <h2 style={{ color: "black" }}>Yenisini yarat</h2>
+          <h2 style={{ color: "black" }}>Redaktə et</h2>
           <label>Kategoriya adı</label>
           <input type="text" onChange={(e) => setName(e.target.value)} value={name || ""} />
           <button type="submit">Yadda saxla</button>

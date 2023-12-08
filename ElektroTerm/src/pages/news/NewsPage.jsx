@@ -1,16 +1,19 @@
 import "./newsPage.scss";
 import { motion } from "framer-motion";
 import { GoArrowRight } from "react-icons/go";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import api from "../../admin/api/posts";
 import { useEffect, useState } from "react";
 import { convertDate } from "../../helper/DateFns";
 import { useQuery } from "@tanstack/react-query";
-import { ThreeCircles } from "react-loader-spinner";
+import Loader from "../../components/loader/Loader";
 
 const NewsPage = () => {
   const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const [search] = useSearchParams();
 
   const handleId = (id) => {
     console.log(id);
@@ -23,15 +26,28 @@ const NewsPage = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
+        setLoading(true);
         const response = await api.get("blogs");
-        setNewsData(response.data);
+
+        if (response) {
+          setNewsData(
+            search.get("category")
+              ? response.data.filter(
+                  (item) =>
+                    Number(item.category_id) === Number(search.get("category"))
+                )
+              : response.data
+          );
+          setLoading(false);
+        }
+        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchSettings();
-  }, []);
+  }, [search.get("category")]);
 
   const { isLoading, data } = useQuery({
     queryFn: () => api.get("banners/news"),
@@ -55,31 +71,7 @@ const NewsPage = () => {
   return (
     <>
       {isLoading ? (
-        <div
-        style={{
-          height: "100vh",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#092635",
-          position: "fixed",
-          zIndex: "999",
-        }}
-      >
-        <ThreeCircles
-          height="100"
-          width="100"
-          color="#4fa94d"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-          ariaLabel="three-circles-rotating"
-          outerCircleColor=""
-          innerCircleColor=""
-          middleCircleColor=""
-        />
-      </div>
+        <Loader color={"#092635"}/>
       ) : (
         <div className="newsPage">
           <div
@@ -101,23 +93,51 @@ const NewsPage = () => {
               Xəbərlər
             </motion.h1>
           </div>
+
           <div className="newsBoxes">
-            <div className="boxes">
-              {newsData.map((box) => (
-                <div key={box.id} className="box">
-                  <div className="imgBox">
-                    <img src={box.image} alt="" />
+            {loading ? (
+              <Loader color={"white"}/>
+            ) : newsData.length === 0 ? (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection:"column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                  margin: "auto",
+                }}
+              >
+                <img
+                  style={{ width: "200px", height: "200px", margin: "auto" }}
+                  src="/notResult.jpg"
+                  alt=""
+                />
+                <h1>Məlumat tapılmadı</h1>
+                <Link onClick={() => navigate(-1)}>
+                  <button className="button">
+                  Geri Qayit
+                  </button>
+                </Link>
+              </div>
+            ) : (
+              <div className="boxes">
+                {newsData.map((box) => (
+                  <div key={box.id} className="box">
+                    <div className="imgBox">
+                      <img src={box.image} alt="" />
+                    </div>
+                    <div className="textBox">
+                      <p className="date">{convertDate(box?.created_at)}</p>
+                      <p className="title">{truncateText(box?.title, 110)}</p>
+                      <button onClick={() => handleId(box.id)}>
+                        <GoArrowRight />
+                      </button>
+                    </div>
                   </div>
-                  <div className="textBox">
-                    <p className="date">{convertDate(box?.created_at)}</p>
-                    <p className="title">{truncateText(box?.title, 110)}</p>
-                    <button onClick={() => handleId(box.id)}>
-                      <GoArrowRight />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}

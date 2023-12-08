@@ -29,11 +29,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    button{
+      border: none;
+      background-color: #664CF0;
+      font-size: 22px;
+      color: white;
+      padding: 18px 22px 14px 22px;
+      margin-top: 20px;
+      transition: all .3s ease-in-out;
+      border-radius: 5px;
+
+      &:hover{
+          background-color: #29f0b4;
+          cursor: pointer;
+          color: white;
+      }
+    }
     .boxes {
       width: 1300px;
       display: grid;
       grid-template-columns: repeat(3, 3fr);
       gap: 40px;
+
       .box {
         background-color: #f4f4f4;
         height: 550px;

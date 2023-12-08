@@ -39,7 +39,7 @@ const AdminNews = () => {
   };
 
   const handleDeleteCategory = (id) => {
-    mutation.mutate(id);
+    mutationCategory.mutate(id);
   };
 
   const queryClient = useQueryClient();
@@ -49,10 +49,23 @@ const AdminNews = () => {
     queryFn: () => api.get("blogs"),
   });
 
+  console.log(blogData?.data)
+
   const { isLoading: isLoadingCategories, data: categoryData } = useQuery({
     queryKey: ["categories"],
     queryFn: () => api.get("categories"),
   });
+
+  const mutationCategory = useMutation({
+    mutationFn: (id) => {
+      return api.delete(`categories/${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["categories"]).then(
+        toast.success("Uğurla silindi") 
+      );
+    },
+  }); 
 
   const mutation = useMutation({
     mutationFn: (id) => {
@@ -63,7 +76,7 @@ const AdminNews = () => {
         toast.success("Uğurla silindi")
       );
     },
-  });
+  }); 
 
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
@@ -119,9 +132,9 @@ const AdminNews = () => {
                 </td>
               </tr>
             ) : (
-              categoryData.data?.map((category, index) => (
+              categoryData?.data?.map((category, index) => (
                 <tr key={index}>
-                  <td>{index}</td>
+                  <td>{index + 1}</td>
                   <td>{category?.name}</td>
                   <td>{index}</td>
                   <td>{index}</td>
@@ -148,6 +161,7 @@ const AdminNews = () => {
           <thead>
             <tr>
               <th>Şəkil *</th>
+              <th>Kateqoriya *</th>
               <th style={{ width: "110px", padding: "12px" }}>Başlıq *</th>
               <th>Məzmun *</th>
               <th style={{ width: "100px" }}>Parametrlər</th>
@@ -183,6 +197,9 @@ const AdminNews = () => {
                       src={item.image}
                       alt=""
                     />
+                  </td>
+                  <td style={{ width: "150px", padding: "12px" }}>
+                    {item.category?.name}
                   </td>
                   <td style={{ width: "150px", padding: "12px" }}>
                     {item.title}

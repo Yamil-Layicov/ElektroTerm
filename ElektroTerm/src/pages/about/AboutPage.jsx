@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import api from "../../admin/api/posts";
 import TruncatedText2 from "../../helper/TruncatedText2";
 import { useQuery } from "@tanstack/react-query";
-import { ThreeCircles } from "react-loader-spinner";
+import Loader from "../../components/loader/Loader";
+
 
 const AboutPage = () => {
   const [aboutData, setAboutData] = useState([]);
@@ -32,31 +33,7 @@ const AboutPage = () => {
   return (
     <>
       {isLoading ? (
-        <div
-          style={{
-            height: "100vh",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#092635",
-            position: "fixed",
-            zIndex: "999",
-          }}
-        >
-          <ThreeCircles
-            height="100"
-            width="100"
-            color="#4fa94d"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="three-circles-rotating"
-            outerCircleColor=""
-            innerCircleColor=""
-            middleCircleColor=""
-          />
-        </div>
+          <Loader color={"#092635"}/>
       ) : (
         <div className="aboutPage">
           <div
