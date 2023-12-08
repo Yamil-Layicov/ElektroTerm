@@ -12,6 +12,8 @@ const NewsDetail = () => {
   const [newsData, setNewsData] = useState([]);
   const [categories, setCategories] = useState([]);
   const { id } = useParams();
+  const [loadings, setLoadings] = useState(true);
+
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -20,13 +22,14 @@ const NewsDetail = () => {
         setNewsData(response.data);
       } catch (error) {
         console.error(error);
+      }finally{
+        setLoadings(false)
       }
     };
 
     fetchSettings();
   }, []);
-
-
+ 
 
 
   useEffect(() => {
@@ -45,6 +48,7 @@ const NewsDetail = () => {
   const { isLoading, data } = useQuery({
     queryFn: () => api.get("banners/news"),
   });
+
 
   return (
     <>
@@ -71,7 +75,8 @@ const NewsDetail = () => {
               Xəbərlər
             </motion.h1>
           </div>
-          <div className="newsDetailBox">
+          {
+            loadings ? <Loader color={"white"}/> : <div className="newsDetailBox">
             <div className="newsDetailBoxInto">
               <div className="img">
                 <img src={newsData.image} alt="" />
@@ -93,6 +98,7 @@ const NewsDetail = () => {
               ))}
             </div>
           </div>
+          }
         </div>
       )}
     </>
