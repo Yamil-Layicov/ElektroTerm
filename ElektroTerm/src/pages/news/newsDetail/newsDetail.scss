@@ -95,8 +95,14 @@
 @media(max-width:800px){
   .newsPageDetail{
     .newsDetailBox{
+      flex-direction: column !important;
+      width: 100% !important;
       width: 100%;
       padding: 80px 15px;
+
+      .categories{
+        width: 100%;
+      }
     }
   }
 }
@@ -119,6 +125,7 @@
           font-size: 30px;
         }
         .content{
+          font-size: 15px;
         }
       }
     }
