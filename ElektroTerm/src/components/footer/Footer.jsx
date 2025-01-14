@@ -89,7 +89,7 @@ const Footer = () => {
         <div className="thirdBox">
           <h4>Əlaqə məlumatı</h4>
           <p>
-            Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22
+            Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12/22
           </p>
           <p>{navData?.phone_1}</p>
           <p>{navData?.phone_2}</p>

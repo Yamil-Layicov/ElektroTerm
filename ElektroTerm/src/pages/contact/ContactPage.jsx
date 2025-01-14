@@ -91,7 +91,7 @@ const ContactPage = () => {
               </div>
               <div className="address">
                 {/* <h1>About Krowd</h1> */}
-                <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12 22</p>
+                <p>Bakı şəhər, Nərimanov rayonu, <br /> Ələsgər Qayıbov 12/22</p>
               </div>
             </motion.div>
             <motion.div
@@ -114,7 +114,7 @@ const ContactPage = () => {
             </motion.div>
           </div>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12149.849936129462!2d49.8786396!3d40.420757!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403089a3b0fde691%3A0x38ac3991190cca0!2sAgro%20Bitki%20Klinikas%C4%B1%20-%20Fitolab!5e0!3m2!1str!2saz!4v1698134293423!5m2!1str!2saz"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.4117649482155!2d49.8782499!3d40.4218803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40308937452dca6f%3A0xbbbb8a603a36b897!2sElektroterm%20MMC!5e0!3m2!1sen!2saz!4v1736832118592!5m2!1sen!2saz"></iframe>
       </div>
       }
     </>
